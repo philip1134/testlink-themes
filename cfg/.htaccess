@@ -1,0 +1,8 @@
+## .htaccess - [TL INSTALL DIR]/cfg
+# need to allow access to tl_ckeditor_config.js
+# or CKEditor will not load toolbar
+Options -Indexes 
+<Files ^(*.js)>
+   order deny,allow
+   deny from all
+</Files>
