@@ -49,7 +49,7 @@
                                 draggable: false,
                                 contentEl: 'testproject_topics',
                                 baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;",
+                                bodyStyle: "",
                                 renderTo: 'menu_left_block_{$menuLayout.testProject}',
                                 width:'100%'
                                 });
@@ -72,7 +72,7 @@
                               draggable: false,
                               contentEl: 'system_topics',
                               baseCls: 'x-tl-panel',
-                              bodyStyle: "background:#c8dce8;padding:3px;",
+                              bodyStyle: "",
                               renderTo: 'menu_left_block_2',
                               width:'100%'
                              });
@@ -95,7 +95,7 @@
                                 draggable: false,
                                 contentEl: 'requirements_topics',
                                 baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;",
+                                bodyStyle: "",
                                 renderTo: 'menu_left_block_{$menuLayout.requirements}',
                                 width:'100%'
                                 });
@@ -116,7 +116,7 @@
                                 draggable: false,
                                 contentEl: 'testspecification_topics',
                                 baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;",
+                                bodyStyle: "",
                                 renderTo: 'menu_left_block_{$menuLayout.testSpecification}',
                                 width:'100%'
                                 });
@@ -248,7 +248,7 @@
                                 draggable: false,
                                 contentEl: 'plugin_left_top',
                                 baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;",
+                                bodyStyle: "",
                                 renderTo: 'menu_left_block_top',
                                 width:'100%'
                                });
@@ -275,7 +275,7 @@
                                 draggable: false,
                                 contentEl: 'plugin_left_bottom',
                                 baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;",
+                                bodyStyle: "",
                                 renderTo: 'menu_left_block_bottom',
                                 width:'100%'
                                });
@@ -301,7 +301,7 @@
                               draggable: false,
                               contentEl: 'testlink_application',
                               baseCls: 'x-tl-panel',
-                              bodyStyle: "background:#c8dce8;padding:3px;",
+                              bodyStyle: "",
                               renderTo: 'menu_left_block_{$menuLayout.general}',
                               width:'100%'
                               });

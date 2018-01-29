@@ -34,7 +34,7 @@
       var rp1 = new Ext.Panel({ title:'{$labels.title_test_plan_mgmt}',
                                 collapsible:false, collapsed: false, draggable: false,
                                 contentEl: 'test_plan_mgmt_topics', baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;", width:'100%',
+                                bodyStyle: "", width:'100%',
                                 renderTo: 'menu_right_block_{$menuLayout.testPlan}'
                                 });
     }
@@ -50,7 +50,7 @@
       var rp2 = new Ext.Panel({ title: '{$labels.title_test_execution}',
                                 collapsible: false, collapsed: false, draggable: false,
                                 contentEl: 'test_execution_topics', baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;", width: '100%',
+                                bodyStyle: "", width: '100%',
                                 renderTo: 'menu_right_block_{$menuLayout.testExecution}'                       
                               });
      }
@@ -66,7 +66,7 @@
       var rp3 = new Ext.Panel({ title: '{$labels.title_test_case_suite}',
                                 collapsible:false, collapsed: false, draggable: false,
                                 contentEl: 'testplan_contents_topics', baseCls: 'x-tl-panel',
-                                bodyStyle: "background:#c8dce8;padding:3px;", width: '100%',
+                                bodyStyle: "", width: '100%',
                                 renderTo: 'menu_right_block_{$menuLayout.testPlanContents}'
                               });
      }
@@ -217,7 +217,7 @@
                               draggable: false,
                               contentEl: 'plugin_right_top',
                               baseCls: 'x-tl-panel',
-                              bodyStyle: "background:#c8dce8;padding:3px;",
+                              bodyStyle: "",
                               renderTo: 'menu_right_block_top',
                               width: '100%'
                              });
@@ -244,7 +244,7 @@
                               draggable: false,
                               contentEl: 'plugin_right_bottom',
                               baseCls: 'x-tl-panel',
-                              bodyStyle: "background:#c8dce8;padding:3px;",
+                              bodyStyle: "",
                               renderTo: 'menu_right_block_bottom',
                               width: '100%'
                              });
