@@ -3839,9 +3839,6 @@ a.x-menu-item {
     padding: 15px;
     position: relative; /* added for item scroll positioning */
 }
-.x-panel-body.exec_additional_info {
-    padding-top: 0; padding-bottom: 0;
-}
 .x-panel-tbar.x-panel-tbar-noheader,
 .x-panel-bbar .x-toolbar, .x-panel-tbar .x-toolbar {
     -moz-box-sizing: border-box;
@@ -5650,12 +5647,12 @@ ul.x-tab-strip-bottom{
 }
 
 .x-fieldset {
-    border-color:#b5b8c8;
+    border-color: #ddd;
 }
 
 .x-fieldset legend {
     font:bold 11px tahoma, arial, helvetica, sans-serif;
-    color:#15428b;
+    color: #2980b9;
 }
 .x-btn{
 	font:normal 11px tahoma, verdana, helvetica;

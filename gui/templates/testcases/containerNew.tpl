@@ -93,18 +93,14 @@ function validateForm(f)
         onSubmit="javascript:return validateForm(this);">
 
   <div style="font-weight: bold;">
-    <div>
+    <div class="groupBtn">
       <input type="hidden" name="containerType" id="containerType" value="{$gui->containerType}"/>
       <input type="hidden" name="add_testsuite" id="add_testsuite" />
       <input type="submit" name="add_testsuite_button" value="{$labels.btn_save}"
              onclick="show_modified_warning = false;" />
-  
       <input type="button" name="go_back" value="{$labels.cancel}" 
              onclick="show_modified_warning=false; 
                      javascript: {if isset($gui->cancelActionJS)}{$gui->cancelActionJS} {else} history.back() {/if};"/>
-
-
-
     </div>  
     {include file="testcases/inc_testsuite_viewer_rw.tpl"}
 
@@ -119,7 +115,7 @@ function validateForm(f)
      <br />
    <div>
    {$kwView = $gsmarty_href_keywordsView|replace:'%s%':$gui->tproject_id}
-   <a href={$kwView}>{$labels.tc_keywords}</a>
+   <div class="labelHolder"><a href={$kwView}>{$labels.tc_keywords}</a></div>
    {include file="opt_transfer.inc.tpl" option_transfer=$opt_cfg}
    </div>
    <br />

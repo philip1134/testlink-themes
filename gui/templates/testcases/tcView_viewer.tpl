@@ -24,7 +24,7 @@ viewer for test case in test specification
 
 {* will be useful in future to semplify changes *}
 {$tableColspan=$gui->tableColspan} 
-{$addInfoDivStyle='style="padding: 15px 0;"'}
+{$addInfoDivStyle='style="margin: 15px 0;"'}
 
 
 {$module='lib/testcases/'}
@@ -348,7 +348,7 @@ function launchInsertStep(step_id)
            steps=$args_testcase.steps}
   {/if}
 </table>
-
+<br /><br />
 {if $edit_enabled && $args_testcase.is_open}
 <div {$addInfoDivStyle}>
   <input type="submit" name="create_step" 

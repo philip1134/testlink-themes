@@ -150,7 +150,7 @@ body:before, body:after, .clearfix {
 }
 
 body.landing {
-	background:  	#059; /* 059 */
+	background:  	#2980b9;
 	font-family: 	'Trebuchet MS', Arial, Verdana, sans-serif;
 	font-size: 		small;
 	margin:			0px;
@@ -158,6 +158,10 @@ body.landing {
 }
 .pull-left { float: left !important; }
 .pull-right { float: right !important; }
+.pull-left.pull-margin { margin-right: 5px; }
+.pull-right.pull-margin { margin-left: 5px; }
+.stick-padding-x { padding-left: 0 !important; padding-right: 0 !important; }
+.stick-padding-y { padding-top: 0 !important; padding-bottom: 0 !important; }
 .border-box, table {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -194,7 +198,7 @@ span, div {
 /* h1.title - To avoid problems with ext js css */
 /* 20080529 - franciscom - font-size reduced */
 h1, h1.title {
-    background: #059;
+    background: #2980b9;
     color: white;
     margin: 15px;
     padding: 4px 15px;
@@ -240,16 +244,20 @@ form
 	margin-right: 0;
 }
 .workBack p { line-height: 20px; }
+.workBack h1.title {
+	margin-left: 0; margin-right: 0; 
+	background-color: #2980b9;
+}
 
 /* ***** Links ***** */
 /* A Visited link is still blue */
 a:visited, a:link, a:active {
-	color: 			#059;
+	color: #2980b9;
 	text-decoration: none;
 }
 /* A link being hovered over is red*/
 a:hover   {
-	color: 			#900;
+	color: #2980b9;
 	text-decoration: none;
 }
 .direct_link {
@@ -311,7 +319,7 @@ select.menu_combo {
 /* ***** Main page specific ***************************************** */
 
 div.testproject_title{
-	background:		#059;
+	background:		#2980b9;
 	border: 		1px solid black;
 	color:			white;
 	font-size:		110%;
@@ -379,7 +387,7 @@ div.tree {
 }
 
 div.groupBtn {
-	padding:	 0;
+	padding: 0;
 	margin: 15px 0;
 }
 
@@ -407,7 +415,7 @@ div.vertical_menu a:first-child {
 	border: none;
 }
 div.vertical_menu a:hover {
-	background-color: #e8e8e8;
+	background-color: #f0f0f0;
 }
 div.menu_bubble {
   background: #c8dce8;
@@ -430,6 +438,7 @@ input[type="submit"],
 input[type="text"],
 input[type="search"],
 input[type="file"],
+.dummy,
 select,
 textarea,
 button {
@@ -445,10 +454,7 @@ button {
    	-webkit-border-radius: 2px;
    	border-radius: 2px;
 }
-select {
-	line-height: 24px;
-	height: 24px;
-}
+select { height: 26px; }
 input[type="password"],
 input[type="text"],
 input[type="search"] {
@@ -458,10 +464,16 @@ input[type="reset"],
 input[type="submit"],
 input[type="file"],
 input[type="button"],
+.dummy,
 button {
 	padding: 0 7px;
 }
 input[type="file"] { border-color: transparent !important; }
+.dummy { 
+	height: 26px;
+	border-color: transparent; 
+	background-color: transparent; 
+}
 /* Animate */
 input[type="reset"]:hover,
 input[type="submit"]:hover,
@@ -490,6 +502,16 @@ select:active,
 select:focus {
 	border: 1px solid #ccc;
   	outline: none;
+}
+.btn-primary {
+	color: #fff !important;
+	border-color: #2980b9 !important;
+	background-color: #2980b9 !important;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+	background-color: #2c88c5 !important;
 }
 
 fieldset.groupBtn {
@@ -548,15 +570,15 @@ span.help
 #tlhelp {
 	position: 		absolute; 
 	z-index:		100; 
-	padding:		5px; 
+	padding:		15px; 
 	right:			50px; 
 	top:			50px; 
 	width: 			500px; 
 	height:			auto;
-	background: 	#059;
-	color:			white;
+	background: 	#e8e8e8;
+	color:			#555;
 	font-size:		80%; 
-	border: 		medium solid #808080;
+	border: 		1px solid #ddd;
 }
 
 #tlhelp h2 {
@@ -571,14 +593,14 @@ span.help
 	margin: 0 0 1em 0.5em;
 }
 
-
 /* ***** Messages ******************************************************* */
 /* show results of SQL actions or important information for user */
 .error, .info, .warning, div.user_feedback {
 	font-size:		110%;
 	text-align:		center;
 	font-weight:    bold;
-	padding: 		3px;
+	line-height: 	22px;
+	padding: 		5px;
 }
 
 .tab-error, .tab-warning, .tab-success{
@@ -596,27 +618,27 @@ span.help
 }
 
 .success, .tab-success {
-	color:			#006400; /* darkgreen */
+	color:			#16a085; /* sea green */
 }
 
 .info, div.user_feedback{
-	color:			black;
+	color:	#2980b9; /* blize hole blue */
 }
 
 div.messages {
-	background-color:	#059;
+	background-color:	#2980b9;
 	color:				white;
 	margin: 			3px;
 	padding:			3px;
 }
 
 div.messages_rounded {
-	background-color:	#059;
+	background-color:	#2980b9;
 	color:				white;
 	margin: 			3px;
 	padding:			3px;
     border-style:solid;
-    border-color:#059;
+    border-color:#2980b9;
     border-radius: 10px;
 }
 
@@ -637,7 +659,7 @@ span.selected, span.unselected {
 }
 
 span.selected {
-	background:		#059;
+	background:		#2980b9;
 	color:			white;
 }
 
@@ -666,7 +688,8 @@ span.unselected a, span.unselected a:visited {
 table.common {
 	margin-bottom: 20px;
 	min-width: 50%;
-	font-size: 13px;
+	font-size: 12px;
+	background-color: #f0f0f0;
 }
 
 table.common th, table.simple th, table.simple_tableruler th {
@@ -675,23 +698,29 @@ table.common th, table.simple th, table.simple_tableruler th {
   	font-weight: bold;
   	font-size: 12px;
   	padding: 8px 5px;
-  	line-height: 16px;
   	background-color: #e8e8e8;
-	vertical-align: middle;
   	min-width: 70px;
 }
+table.common th { padding: 13px 5px; line-height: 16px; }
 
-table.common td, th {
-	padding: 3px 5px;
-}
 table tr.odd { background-color: #fff; }
 table tr.even { background-color: #f0f0f0; }
 
-table.common td, table.simple td, table.simple_tableruler td, th {
-  	padding:	 8px 5px;
-  	line-height:	16px;
+table tr.splitter { 
+	width: 100%; padding: 0; 
+	border-top: 1px dashed #ddd;
 }
-table.common td {
+table tr.splitter td {
+	padding: 0;
+}
+
+table.common td, 
+table.simple td, 
+table.simple_tableruler td, th {
+  	padding: 8px 5px;
+  	line-height: 16px;
+}
+table.common th, table.common td {
 	vertical-align: top;
 }
 table.simple td, table.simple_tableruler td, th {
@@ -707,22 +736,25 @@ simple_tableruler td p:first-child{
 }
 
 table.common caption, table.smallGrey caption {
-	background:     #CCC;
-	border: 		1px solid black;
+	background: #e8e8e8;
+	border: 1px solid black;
 	border-bottom-style: none;
-	font-weight:    bold;
+	font-weight: bold;
 }
 
 
 /* ***** Simple Table (often used to show data) ***************** */
 table.simple, table.simple_tableruler {
-	border: 	1px solid #ddd;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
 	margin:	15px 0;
 	width: 100%;
 }
 
 table.simple caption, table.simple_tableruler caption{
-	background:     #CCC;
+	background:     #e8e8e8;
 	border: 		thin solid black;
 	border-bottom-style: none;
 	font-weight:    bold;
@@ -733,7 +765,7 @@ table.simple_tableruler tr:hover{
 }
 
 table.tableruler tr:hover{
-    background-color: #FFF !important;
+    background-color: #fff !important;
 }
 
 /* Used for filters and options settings */
@@ -831,7 +863,7 @@ table.test_exec {
 	margin: 15px 0;
 	font-size: 12px;
 	border: 1px solid #ddd;
-	line-height: 26px;
+	line-height: 24px;
 }
 
 .tl-msg {
@@ -987,7 +1019,7 @@ div.exec_history {
 }
 
 span.type1 {
-	background:		#059;
+	background:		#2980b9;
 	border: 		1px solid black;
 	color:			white;
 	margin-bottom:	4px;
@@ -1112,8 +1144,9 @@ div.login_form.medium {
 }
 
 .option_transfer_container {
-  border: thin solid white;
-  padding: 5px;
+	padding: 5px 15px 15px 15px;
+	background-color: #e8e8e8;
+	border: 1px solid #ddd;
 }
 
 .clickable_icon
@@ -1133,7 +1166,7 @@ div.login_form.medium {
 
 /* havlatm: @TODO title must be header markup */
 .exec_tc_title {
-	background:		#059;
+	background:		#2980b9;
 	color:			white;
 	margin-bottom:	4px;
 	padding: 		3px;
@@ -1183,10 +1216,9 @@ th.testlink, td.testlink, tr.testlink td {
   margin: 1px;
 }
 
-.clickable
-{
-	cursor:pointer;
-}
+.clickable { cursor:pointer; }
+img.clickable { margin-left: 3px; margin-right: 3px; }
+
 
 /* 
 @since 1.9.6

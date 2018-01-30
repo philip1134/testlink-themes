@@ -226,7 +226,7 @@ var {$gui->dialogName} = new std_dialog('&refreshTree');
 
 {$my_style=""}
 {if $gui->hilite_item_name}
-  {$my_style="background:#059; color:white; margin:0px 0px 4px 0px;padding:3px;"}
+  {$my_style="background:#2980b9; color:white; margin:0px 0px 4px 0px;padding:3px;"}
 {/if}
 
 {$this_template_dir=$smarty.template|dirname}

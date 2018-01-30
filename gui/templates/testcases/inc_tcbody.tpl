@@ -14,23 +14,18 @@ viewer for test case in test specification
   	{/if}
   	
 	<tr>
-	  	<th class="bold" colspan="{$inc_tcbody_tableColspan}" style="text-align:left;">{$inc_tcbody_labels.version}
-	  	{$inc_tcbody_testcase.version|escape}
-		<img class="clickable" src="{$tlImages.ghost_item}"
-             title="{$inc_tcbody_labels.show_ghost_string}"
-             onclick="showHideByClass('tr','ghostTC');">
-
-		<img class="clickable" src="{$tlImages.activity}"
-             title="{$inc_tcbody_labels.display_author_updater}"
-             onclick="showHideByClass('tr','time_stamp_creation');">
-
-	  	</td>
+	  	<th class="bold" colspan="{$inc_tcbody_tableColspan}" style="text-align:left;">
+		  	<div class="pull-left">{$inc_tcbody_labels.version}{$inc_tcbody_testcase.version|escape}</div>
+			<img class="clickable pull-left" src="{$tlImages.ghost_item}"
+	             title="{$inc_tcbody_labels.show_ghost_string}"
+	             onclick="showHideByClass('tr','ghostTC');">
+			<img class="clickable pull-left" src="{$tlImages.activity}"
+	             title="{$inc_tcbody_labels.display_author_updater}"
+	             onclick="showHideByClass('tr','time_stamp_creation');">
+	  	</th>
 	</tr>
 	<tr class="ghostTC" style="display:none;">
 	  	<td colspan="{$inc_tcbody_tableColspan}">{$inc_tcbody_testcase.ghost}</td>	
-	</tr>
-	<tr class="ghostTC" style="display:none;">
-		<td colspan="{$inc_tcbody_tableColspan}">&nbsp;</td>	
 	</tr>
 	{if $inc_tcbody_author_userinfo != ''}  
 	<tr class="time_stamp_creation" style="display:none;">

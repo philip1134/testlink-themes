@@ -92,7 +92,7 @@ function validateForm(f)
         name="container_edit" id="container_edit"
         onSubmit="javascript:return validateForm(this);">
   
-  <div>
+  <div class="groupBtn">
     <input type="hidden" name="containerType" id="containerType" value="testsuite" />
     <input type="hidden" name="doAction" value="" />
     <input type="submit" name="update_testsuite" value="{$labels.btn_save}" 
@@ -115,14 +115,11 @@ function validateForm(f)
   {if $gui->hasKeywords}
   {$kwView = $gsmarty_href_keywordsView|replace:'%s%':$gui->tproject_id} 
   <div>
-   <a href={$kwView}>{$labels.tc_keywords}</a>
+   <div class="labelHolder"><a href={$kwView}>{$labels.tc_keywords}</a></div>
    {include file="opt_transfer.inc.tpl" option_transfer=$opt_cfg}
   </div>
   {/if}
-  
-  <br></br>
-  
-  <div>
+  <div class="groupBtn">
     <input type="submit" name="update_testsuite" id="update_testsuite_bottom" value="{$labels.btn_save}" 
            onclick="show_modified_warning = false; doAction.value='update_testsuite'" />
     <input type="button" name="go_back" value="{$labels.cancel}" 
@@ -130,6 +127,5 @@ function validateForm(f)
   </div>
   </form>
 </div>
-
 </body>
 </html>

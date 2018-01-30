@@ -192,7 +192,7 @@ function setComboIfCbx(oid,combo_id_prefix,oid4value)
             {* ---------------------------------------------------------------------------------------------------- *}
 			      {* Heading *}
 			      <thead>
-			      <tr style="background-color:#059; font-weight:bold; color:white">
+			      <tr style="background-color:#2980b9; font-weight:bold; color:white">
 			      	<th width="35px" align="center">
 			          <img class="clickable" src="{$tlImages.toggle_all}"
 			               onclick='cs_all_checkbox_in_div("{$div_id}","{$add_cb}_{$ts_id}_","add_value_{$ts_id}");'

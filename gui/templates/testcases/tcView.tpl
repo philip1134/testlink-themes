@@ -48,7 +48,7 @@ var {$gui->dialogName} = new std_dialog('&refreshTree');
 
 {$my_style=""}
 {if $gui->hilite_testcase_name}
-  {$my_style="background:#059; color:white; margin:0px 0px 4px 0px;padding:3px;"}
+  {$my_style="background:#2980b9; color:white; margin:0px 0px 4px 0px;padding:3px;"}
 {/if}
 
 <body onLoad="viewElement(document.getElementById('other_versions'),false);{$gui->bodyOnLoad}" onUnload="{$gui->bodyOnUnload}">
@@ -69,14 +69,14 @@ var {$gui->dialogName} = new std_dialog('&refreshTree');
     {$my_delete_version="no"}
   {/if}
     <h2 style="{$my_style}">
-    {$tlImages.toggle_direct_link} &nbsp;
+    {$tlImages.toggle_direct_link}
     {if $gui->display_testcase_path}
       {foreach from=$gui->path_info[$tcID] item=path_part}
         {$path_part|escape} /
       {/foreach}
       {* <br /> *}
     {/if}
-    <img class="clickable pull-left" src="{$tlImages.cog}" onclick="javascript:toogleShowHide('tcView_viewer_tcase_control_panel','inline');"
+    <img class="clickable pull-right" src="{$tlImages.cog}" onclick="javascript:toogleShowHide('tcView_viewer_tcase_control_panel','inline');"
          title="{$labels.actions}" />
 
     {if $gui->show_title == 'no'}

@@ -19,7 +19,7 @@ Purpose: view requirement with version + revision
 {config_load file="input_dimensions.conf"}
 {assign var="my_style" value=""}
 {if $gui->hilite_item_name}
-    {assign var="my_style" value="background:#059; color:white; margin:0px 0px 4px 0px;padding:3px;"}
+    {assign var="my_style" value="background:#2980b9; color:white; margin:0px 0px 4px 0px;padding:3px;"}
 {/if}
 
 {include file="inc_head.tpl" openHead='yes' jsValidate="yes"}

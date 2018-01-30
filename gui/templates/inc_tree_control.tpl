@@ -11,7 +11,7 @@
 
 {lang_get var=labels s='expand_tree, collapse_tree'}
 
-<div class="x-panel-body exec_additional_info" style="border: none;">
+<div class="x-panel-body exec_additional_info stick-padding-y" style="border: none;">
 
 <input type="button"
        value="{$labels.expand_tree}" 

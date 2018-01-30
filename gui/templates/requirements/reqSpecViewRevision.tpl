@@ -11,7 +11,7 @@ Purpose: view requirement spec revision READ ONLY
 {config_load file="input_dimensions.conf"}
 {assign var="my_style" value=""}
 {if $gui->hilite_item_name}
-    {assign var="my_style" value="background:#059; color:white; margin:0px 0px 4px 0px;padding:3px;"}
+    {assign var="my_style" value="background:#2980b9; color:white; margin:0px 0px 4px 0px;padding:3px;"}
 {/if}
 {assign var=this_template_dir value=$smarty.template|dirname}
 

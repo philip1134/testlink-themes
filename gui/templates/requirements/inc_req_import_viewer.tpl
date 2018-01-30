@@ -55,7 +55,7 @@ function check_action_precondition(container_id,action)
             <table cellspacing="0" style="font-size:small;" width="100%">
             {* ---------------------------------------------------------------------------------------------------- *}
 			      {* Heading *}
-			      <tr style="background-color:#059; font-weight:bold; color:white">
+			      <tr style="background-color:#2980b9; font-weight:bold; color:white">
               <td>{$labels.doc_id_short}</td> 
               <td>{$labels.title}</td>
               <td align="center">&nbsp;&nbsp;{$labels.scope}</td>

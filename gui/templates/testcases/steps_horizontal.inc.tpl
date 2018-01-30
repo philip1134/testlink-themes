@@ -144,13 +144,12 @@ TestLink Open Source Project - http://testlink.sourceforge.net/
 
     {$rCount=$row+$step_info.step_number}
     {if ($rCount < $rowCount) && ($rowCount>=1)}
-      <tr width="100%">
+      <tr class="splitter">
         {if $session['testprojectOptions']->automationEnabled}
         <td colspan=6>
         {else}
         <td colspan=5>
         {/if}
-        <hr align="center" width="100%" color="grey" size="1">
         </td>
       </tr>
     {/if}
