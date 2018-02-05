@@ -106,7 +106,7 @@ function manageIssueTracker(selectOID,targetOID)
       {if $gui->tprojectID eq 0}
         {if $gui->testprojects != ''}
        <tr>
-         <td>{$labels.create_from_existent_tproject}</td>
+         <th>{$labels.create_from_existent_tproject}</th>
          <td>
            <select name="copy_from_tproject_id">
            <option value="0">{$labels.opt_no}</option>
@@ -119,21 +119,21 @@ function manageIssueTracker(selectOID,targetOID)
        {/if}
       {/if}
       <tr>
-        <td>{$labels.name} *</td>
+        <th>{$labels.name} *</th>
         <td><input type="text" name="tprojectName" size="{#TESTPROJECT_NAME_SIZE#}"
             value="{$gui->tprojectName|escape}" maxlength="{#TESTPROJECT_NAME_MAXLEN#}" required />
             {include file="error_icon.tpl" field="tprojectName"}
         </td>
       </tr>
       <tr>
-        <td>{$labels.testproject_prefix} *</td>
+        <th>{$labels.testproject_prefix} *</th>
         <td><input type="text" name="tcasePrefix" size="{#TESTCASE_PREFIX_SIZE#}"
                    value="{$gui->tcasePrefix|escape}" maxlength="{#TESTCASE_PREFIX_MAXLEN#}" required />
             {include file="error_icon.tpl" field="tcasePrefix"}
         </td>
       </tr>
       <tr>
-        <td>{$labels.testproject_description}</td>
+        <th>{$labels.testproject_description}</th>
         <td style="width:80%">{$notes}</td>
       </tr>
       {if $gui_cfg->testproject_coloring neq 'none'}
@@ -141,7 +141,7 @@ function manageIssueTracker(selectOID,targetOID)
         <th style="background:none;">{$labels.testproject_color}</th>
         <td>
           <input type="text" name="color" value="{$color|escape}" maxlength="12" />
-          {* this function below calls the color picker javascript function.
+          {* this function below <canvas></canvas>lls the color picker javascript function.
           It can be found in the color directory *}
           <a href="javascript: TCP.popup(document.forms['edit_testproject'].elements['color'], '{$basehref}third_party/color_picker/picker.html');">
             <img width="15" height="13" border="0" alt="{$labels.testproject_alt_color}"
@@ -151,31 +151,35 @@ function manageIssueTracker(selectOID,targetOID)
       </tr>
       {/if}
       <tr>
-        <td>{$labels.testproject_features}</td><td></td>
+        <th>{$labels.testproject_features}</th><td></td>
       </tr>
       <tr>
-        <td></td><td>
+        <th></th>
+        <td>
             <input type="checkbox" name="optReq" 
                 {if $gui->projectOptions->requirementsEnabled} checked="checked"  {/if} />
           {$labels.testproject_enable_requirements}
         </td>
       </tr>
       <tr>
-        <td></td><td>
+        <th></th>
+        <td>
           <input type="checkbox" name="optPriority" 
               {if $gui->projectOptions->testPriorityEnabled} checked="checked"  {/if} />
           {$labels.testproject_enable_priority}
         </td>
       </tr>
       <tr>
-        <td></td><td>
+        <th></th>
+        <td>
           <input type="checkbox" name="optAutomation" 
                 {if $gui->projectOptions->automationEnabled} checked="checked" {/if} />
           {$labels.testproject_enable_automation}
         </td>
       </tr>
       <tr>
-        <td></td><td>
+        <th></th>
+        <td>
           <input type="checkbox" name="optInventory" 
                 {if $gui->projectOptions->inventoryEnabled} checked="checked" {/if} />
           {$labels.testproject_enable_inventory}
@@ -183,16 +187,16 @@ function manageIssueTracker(selectOID,targetOID)
       </tr>
 
       <tr>
-        <td>{$labels.testproject_issue_tracker_integration}</td><td></td>
+        <th>{$labels.testproject_issue_tracker_integration}</th><td></td>
       </tr>
       {if $gui->issueTrackers == ''}
         <tr>
-          <td></td>
+          <th></th>
           <td>{$labels.no_issuetracker_defined}</td>
         </tr>
       {else}
         <tr>
-          <td></td>
+          <th></th>
           <td>
             <input type="checkbox" id="issue_tracker_enabled"
                    name="issue_tracker_enabled" {if $gui->issue_tracker_enabled == 1} checked="checked" {/if} />
@@ -200,7 +204,7 @@ function manageIssueTracker(selectOID,targetOID)
           </td>
         </tr>
         <tr>
-          <td></td>
+          <th></th>
           <td>
             {$labels.issue_tracker}
              <select name="issue_tracker_id" id="issue_tracker_id"
@@ -219,16 +223,16 @@ function manageIssueTracker(selectOID,targetOID)
          
       {*
       <tr>
-        <td>{$labels.testproject_reqmgr_integration}</td><td></td>
+        <th>{$labels.testproject_reqmgr_integration}</th><td></td>
       </tr>                         
       {if $gui->reqMgrSystems == ''}
       <tr>
-        <td></td>
+        <th></th>
         <td>{$labels.no_rms_defined}</td>
       </tr>
       {else}
       <tr>
-        <td></td>
+        <th></th>
         <td>
           <input type="checkbox" id="reqmgr_integration_enabled"
                  name="reqmgr_integration_enabled" {if $gui->reqmgr_integration_enabled == 1} checked="checked" {/if} />
@@ -236,7 +240,7 @@ function manageIssueTracker(selectOID,targetOID)
           </td>
       </tr>
       <tr>
-        <td></td>
+        <th></th>
         <td>
             {$labels.reqmgrsystem}
              <select name="reqmgrsystem_id" id="reqmgrsystem_id">
@@ -254,44 +258,40 @@ function manageIssueTracker(selectOID,targetOID)
       *}
 
       <tr>
-        <td>{$labels.availability}</td><td></td>
+        <th>{$labels.availability}</th><td></td>
       </tr>
       <tr>
-        <td></td><td>
-            <input type="checkbox" name="active" {if $gui->active eq 1} checked="checked" {/if} />
-            {$labels.th_active}
-          </td>
-          </tr>
+        <th></th>
+        <td>
+          <input type="checkbox" name="active" {if $gui->active eq 1} checked="checked" {/if} />
+          {$labels.th_active}
+        </td>
+        </tr>
 
       <tr>
-        <td></td><td>
-            <input type="checkbox" name="is_public" {if $gui->is_public eq 1} checked="checked"  {/if} />
-            {$labels.public}
-          </td>
+        <th></th>
+        <td>
+          <input type="checkbox" name="is_public" {if $gui->is_public eq 1} checked="checked"  {/if} />
+          {$labels.public}
+        </td>
       </tr>
       
       {if $gui->api_key != ''}
       <tr>
-        <td>{$labels.api_key}</td>
+        <th>{$labels.api_key}</th>
         <td>{$gui->api_key}</td>
       </tr>
       {/if}
-
-
-
-      <tr><td cols="2">
-        {if $gui->canManage == "yes"}
-        <div class="groupBtn">
-          <input type="hidden" name="doAction" value="{$doActionValue}" />
-          <input type="hidden" name="tprojectID" value="{$gui->tprojectID}" />
-          <input type="submit" name="doActionButton" value="{$buttonValue}" />
-          <input type="button" name="go_back" value="{$labels.cancel}" 
-                 onclick="javascript: location.href=fRoot+'lib/project/projectView.php';" />
-        </div>
-      {/if}
-      </td></tr>
-
     </table>
+      {if $gui->canManage == "yes"}
+      <div class="groupBtn">
+        <input type="hidden" name="doAction" value="{$doActionValue}" />
+        <input type="hidden" name="tprojectID" value="{$gui->tprojectID}" />
+        <input type="submit" name="doActionButton" value="{$buttonValue}" />
+        <input type="button" name="go_back" value="{$labels.cancel}" 
+               onclick="javascript: location.href=fRoot+'lib/project/projectView.php';" />
+      </div>
+      {/if}
     </form>
     <p>* {$labels.mandatory}</p>
   </div>

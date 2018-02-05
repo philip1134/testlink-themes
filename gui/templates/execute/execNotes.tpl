@@ -19,7 +19,7 @@ CHECK NEEDED - Probably this code is OBSOLETE and not used anymore.
 	</table>
 		<div class="groupBtn">
 		  <input type="hidden" name="doAction" value="doUpdate">
-			<input type="submit" value="{lang_get s='btn_save'}"/>
+			<input type="submit" value="{lang_get s='btn_save'}" />
 			<input type="button" value="{lang_get s='btn_close'}" onclick="window.close()" />
 		</div>
 	</form>

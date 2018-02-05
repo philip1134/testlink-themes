@@ -39,24 +39,22 @@ function validateForm(f)
   <form method="post" id="export_xml" enctype="multipart/form-data" 
         action="lib/usermanagement/usersExport.php"
         onSubmit="javascript:return validateForm(this);">
-    <table>
+    <table class="common">
     <tr>
-    <td>
-    {$labels.export_filename}
-    </td>
-    <td>
-  	<input type="text" name="export_filename" maxlength="{#FILENAME_MAXLEN#}" 
-			           value="{$gui->export_filename|escape}" size="{#FILENAME_SIZE#}" required />
-			  				{include file="error_icon.tpl" field="export_filename"}
-  	</td>
+      <th>{$labels.export_filename}</th>
+      <td>
+    	<input type="text" name="export_filename" maxlength="{#FILENAME_MAXLEN#}" 
+  			           value="{$gui->export_filename|escape}" size="{#FILENAME_SIZE#}" required />
+  			  				{include file="error_icon.tpl" field="export_filename"}
+    	</td>
   	<tr>
-  	<td>{$labels.file_type}</td>
-  	<td>
-  	<select name="exportType">
-  		{html_options options=$gui->exportTypes}
-  	</select>
-	  <a href={$basehref}{$smarty.const.PARTIAL_URL_TL_FILE_FORMATS_DOCUMENT}>{$labels.view_file_format_doc}</a>
-  	</td>
+    	<th>{$labels.file_type}</th>
+    	<td>
+    	<select name="exportType">
+    		{html_options options=$gui->exportTypes}
+    	</select>
+  	  <a href={$basehref}{$smarty.const.PARTIAL_URL_TL_FILE_FORMATS_DOCUMENT}>{$labels.view_file_format_doc}</a>
+    	</td>
   	</tr>
   
   	</table>

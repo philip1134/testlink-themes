@@ -33,7 +33,7 @@
 $TLS_STRINGFILE_CHARSET = "UTF-8";
 
 // Last Update of this file
-$TLS_last_update = "Last localization update: 2016-01-05 (Testlink 1.9.15)";
+$TLS_last_update = "Last localization update: 2018-02-05 (Testlink 1.9.16 GraySkin)";
 
 // ----- General terms (used wide) ----------------------------
 $TLS_type_not_configured = "系统消息：未配置类型";
@@ -2808,8 +2808,8 @@ $TLS_testsuite_name_created = "创建测试用例集 %s";
 
 // ----- keywordsEdit.php -----
 $TLS_keyword_management = "关键字管理";
-$TLS_create_keyword = "Create 关键字";
-$TLS_edit_keyword = "Edit 关键字";
+$TLS_create_keyword = "创建关键字";
+$TLS_edit_keyword = "编辑关键字";
 $TLS_warning_empty_keyword = "关键字不能为空!";
 
 // ----- platformsEdit.php -----
