@@ -120,7 +120,7 @@ TestLink Open Source Project - http://testlink.sourceforge.net/
      {/if} 
 
      {if $gui->user_action == 'create' || $gui->user_action == 'doCreate'}
-      <input type="submit" value="{$labels.btn_save}" 
+      <input type="submit" value="{$labels.btn_save}"
              onclick="user_action.value='doCreate';return dialog_onSubmit(bug_dialog)" />
      {/if} 
 
