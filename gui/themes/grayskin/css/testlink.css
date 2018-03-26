@@ -150,7 +150,7 @@ body:before, body:after, .clearfix {
 }
 
 body.landing {
-	background:  	#2980b9;
+	background:  	#2980b9; /* 059 */
 	font-family: 	'Trebuchet MS', Arial, Verdana, sans-serif;
 	font-size: 		small;
 	margin:			0px;

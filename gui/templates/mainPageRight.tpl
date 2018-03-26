@@ -88,17 +88,19 @@
 <div class="vertical_menu" style="float: right; margin:10px 10px 10px 10px">
 {* ----------------------------------------------------------------------------------- *}
 	{if $gui->num_active_tplans > 0}
-	  <div class="">
+	  <div class="x-tl-panel">
      {lang_get s='help' var='common_prefix'}
      {lang_get s='test_plan' var="xx_alt"}
      {$text_hint="$common_prefix: $xx_alt"}
      {include file="inc_help.tpl" helptopic="hlp_testPlan" show_help_icon=true 
               inc_help_alt="$text_hint" inc_help_title="$text_hint"  
-              inc_help_style="float: right;vertical-align: top;"}
-
+              inc_help_style="float: right; vertical-align: top;"}
  	   <form name="testplanForm" action="lib/general/mainPage.php">
        {if $gui->countPlans > 0}
-		     {$labels.current_test_plan}:<br/>
+         {if $gui->countPlans == 1}
+          <input type="button" onclick="this.form.submit();" value="{$labels.ok}" style="float: right" />
+         {/if}
+
 		     <select class="chosen-select" name="testplan" onchange="this.form.submit();">
 		     	{section name=tPlan loop=$gui->arrPlans}
 		     		<option value="{$gui->arrPlans[tPlan].id}"
@@ -108,10 +110,6 @@
 		     		</option>
 		     	{/section}
 		     </select>
-		     
-		     {if $gui->countPlans == 1}
-		     	<input type="button" onclick="this.form.submit();" value="{$labels.ok}"/>
-		     {/if}
 		     
 		     {if $gui->testplanRole neq null}
 		     	<br />{$labels.testplan_role} {$gui->testplanRole|escape}
@@ -139,12 +137,10 @@
 	    {/if}
 	    
 	    {if $gui->grants.testplan_create_build == "yes" and $gui->countPlans > 0}
-	    	<br />
        	<a href="lib/plan/buildView.php?tplan_id={$gui->testplanID}">{$labels.href_build_new}</a>
       {/if}
 	    
       {if $gui->grants.testplan_milestone_overview == "yes" and $gui->countPlans > 0}
-         <br />
          <a href="lib/plan/planMilestonesView.php">{$labels.href_plan_mstones}</a>
       {/if}
     </div>
@@ -156,18 +152,15 @@
     <div id='test_execution_topics'>
 		{if $gui->grants.testplan_execute == "yes"}
 			<a href="{$gui->launcher}?feature=executeTest">{$labels.href_execute_test}</a>
-      <br /> 
 		
       {if $gui->grants.exec_testcases_assigned_to_me == "yes"}
 			 <a href="{$gui->url.testcase_assignments}">{$labels.href_my_testcase_assignments}</a>
-			 <br />
       {/if} 
 		{/if} 
       
 		{if $gui->grants.testplan_metrics == "yes"}
 			<a href="{$gui->launcher}?feature=showMetrics">{$labels.href_rep_and_metrics}</a>
-			<br />
-  			<a href="{$gui->url.metrics_dashboard}">{$labels.href_metrics_dashboard}</a>
+  		<a href="{$gui->url.metrics_dashboard}">{$labels.href_metrics_dashboard}</a>
 		{/if} 
     </div>
 	{/if}
@@ -178,29 +171,22 @@
     <div id='testplan_contents_topics'>
     {if $gui->grants.testplan_add_remove_platforms == "yes"}
   	  <a href="lib/platforms/platformsAssign.php?tplan_id={$gui->testplanID}">{$labels.href_platform_assign}</a>
-  		<br />
     {/if} 
 		
 	  <a href="{$gui->launcher}?feature=planAddTC">{$labels.href_add_remove_test_cases}</a>
-	  <br />
-
     <a href="{$gui->launcher}?feature=tc_exec_assignment">{$labels.href_tc_exec_assignment}</a>
-    <br />
 		
     {if $session['testprojectOptions']->testPriorityEnabled && 
         $gui->grants.testplan_set_urgent_testcases == "yes"}
       <a href="{$gui->launcher}?feature=test_urgency">{$labels.href_plan_assign_urgency}</a>
-      <br />
     {/if}
 
     {if $gui->grants.testplan_update_linked_testcase_versions == "yes"}
 	   	<a href="{$gui->launcher}?feature=planUpdateTC">{$labels.href_update_tplan}</a>
-	    <br />
     {/if} 
 
     {if $gui->grants.testplan_show_testcases_newest_versions == "yes"}
 	   	<a href="{$gui->launcher}?feature=newest_tcversions">{$labels.href_newest_tcversions}</a>
-	    <br />
     {/if} 
 
     </div>
@@ -264,6 +250,6 @@
 </div>
 <script>
 jQuery( document ).ready(function() {
-jQuery(".chosen-select").chosen({ width: "85%" });
+jQuery(".chosen-select").chosen({ width: "75%" });
 });
 </script>
