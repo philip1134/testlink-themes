@@ -192,9 +192,9 @@
    {if $display_left_block_3}
     <div id="requirements_topics" >
       {if $gui->grants.reqs_view == "yes"}
-        <a href="{$gui->launcher}?feature=reqSpecMgmt">{$labels.href_req_spec}</a><br/>
-        <a href="lib/requirements/reqOverview.php">{$labels.href_req_overview}</a><br/>
-        <a href="{$gui->launcher}?feature=searchReq">{$labels.href_search_req}</a><br/>
+        <a href="{$gui->launcher}?feature=reqSpecMgmt">{$labels.href_req_spec}</a>
+        <a href="lib/requirements/reqOverview.php">{$labels.href_req_overview}</a>
+        <a href="{$gui->launcher}?feature=searchReq">{$labels.href_search_req}</a>
         <a href="{$gui->launcher}?feature=searchReqSpec">{$labels.href_search_req_spec}</a>
      {/if}
        
