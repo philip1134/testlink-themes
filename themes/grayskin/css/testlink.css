@@ -155,7 +155,7 @@ output {
 /* ***** GLOBAL HTML ***************************************************************** */
 html, body {
 	height: 100%;
-    line-height: 24px;
+    line-height: 20px;
 	width: 100%;
 	margin: 0px;
 }
@@ -440,7 +440,8 @@ On chrome seems not work
 /* background for working area (tables and forms) */
 div.workBack {
 	text-align: left;
-	background: #f0f0f0;
+	/*background: #f0f0f0;*/
+    background-color: #fff;
     border: none;
     margin: 20px 0;
     padding: 20px;
@@ -537,9 +538,11 @@ textarea,
 button,
 .btn,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.chosen-container-multi .chosen-choices,
+.chosen-single {
    margin: 0;
-   font-size: 9pt;
+   font-size: 13px;
    -moz-border-radius: 3px !important;
    -webkit-border-radius: 3px !important;
    border-radius: 3px !important;
@@ -598,7 +601,9 @@ input[type="search"],
 select,
 textarea,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.chosen-container-multi .chosen-choices,
+.chosen-single {
     color: black;
     background: none !important;
     background-color: #fff !important;
@@ -609,8 +614,24 @@ input[type="password"],
 input[type="text"],
 input[type="search"],
 select,
-textarea {
-    padding: 2px 3px;
+textarea,
+.chosen-container-multi .chosen-choices,
+.chosen-single {
+    padding: 2px 3px !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+    height: 24px !important;
+    margin: 0 !important;
+}
+
+.chosen-single {
+    height: 30px !important;
+    box-shadow: none !important;
+}
+
+.chosen-container .chosen-drop {
+    border: 1px solid #e3e3e3 !important;
 }
 
 select {
@@ -640,7 +661,8 @@ input[type="reset"]:focus,
 input[type="submit"]:focus,
 input[type="button"]:focus,
 button:active,
-button:focus {
+button:focus,
+select:active {
    border: 1px solid #e3e3e3;
 }
 
@@ -654,18 +676,38 @@ textarea:focus {
 
 fieldset.groupBtn {
 	border: 0;
-	margin-left: 5px;
-	padding: 0 0 0.5em 1em;
+	margin: 0 5px;
+    line-height: 24px;
+    background-color: #fff;
 }
 
 fieldset.groupBtn h2 {
-	font-size: 10pt;
+	font-size: 14px;
 	display: block;
 	margin: 0 0 0 -1em;
 	padding: 0;
 }
+
+fieldset.groupBtn b {
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
 fieldset.groupBtn form {
-	display: inline;
+	display: block;
+    float: left;
+    line-height: 24px;
+}
+
+fieldset.groupBtn input[type="image"],
+fieldset.groupBtn img {
+    width: 16px;
+    height: 16px;
+    line-height: 16px !important;
+    display: block;
+    float: left;
+    margin: 4px;
 }
 
 /* ***** Help ***************************************************************************
@@ -808,14 +850,16 @@ table.common {
 table th {
   	overflow: hidden;
   	font-weight: bold;
-    padding: 8px 3px;
+    line-height: 16px;
+    padding: 7px 10px;
+}
+
+table td {
+    padding: 5px 10px;
     line-height: 20px;
-  	background-color: #eee;
 }
 
 table td, th {
-	padding: 3px 10px;
-    line-height: 24px;
     vertical-align: top;
     text-align: left;
 }
@@ -853,8 +897,6 @@ simple_tableruler td p:first-child{
 }
 
 table.common caption, table.smallGrey caption {
-	background:     #CCC;
-	border: 		1px solid black;
 	border-bottom-style: none;
 	font-weight:    bold;
 }
@@ -862,10 +904,7 @@ table.common caption, table.smallGrey caption {
 
 /* ***** Simple Table (often used to show data) ***************** */
 table.simple, table.simple_tableruler {
-	border: 		thin solid black;
-	font-size:		90%;
-	margin:			5px;
-	width:			99%;
+	width:			100%;
 }
 
 table.simple caption, table.simple_tableruler caption{
@@ -885,10 +924,23 @@ table.tableruler tbody tr:hover{
 
 /* Used for filters and options settings */
 table.smallGrey {
-	border: 		1px solid black;
 	font-size:		smaller;
 	margin-bottom:	10px;
 	margin-right:	0px;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+table.smallGrey td {
+    padding: 2px;
+}
+table.smallGrey td input {
+    box-sizing: border-box;
+    width: 100% !important;
+}
+table.smallGrey td input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px;
+    margin: 4px auto;
 }
 
 table.no-border {
@@ -988,6 +1040,34 @@ table.test_exec {
     border-top: none;
 }
 
+table.x-btn,
+.x-btn-small,
+.x-btn-ml,
+.x-btn-mc,
+.x-btn-mr,
+table.x-btn button {
+    height: 24px !important;
+    line-height: 24px !important;
+}
+
+table.x-btn button {
+    border: none !important;
+    padding-left: 20px !important;
+}
+
+.x-btn {
+    margin: 0 10px;
+}
+
+.x-grid3-hd-row td {
+    border: none !important;
+}
+
+.x-grid3-header-offset table {
+    width: 100% !important;
+}
+
+.x-toolbar-cell { padding: 0 !important; }
 
 /* ***** Execution & Results ********************************************************* */
 div.passed, div.failed, div.blocked, div.not_run {
@@ -1298,22 +1378,23 @@ div.login_form.medium {
 	border-radius: 10px;
 }
 
-
-.exec_additional_info{
-	background-color: 	#F0F4F0; /* whitesmoke=F0F4F0, #FFC*/
-	color: 			black;
-	margin-bottom:	10px;
-	padding-left:	10px;
-	width: 			98%;
+.exec_additional_info {
+	color: black;
+	margin:	10px;
+}
+.x-panel .exec_additional_info {
+    margin: 0;
+}
+.x-panel-body-noheader {
+    border: none !important;
 }
 
 .exec_testsuite_details {
-  border: 			thin solid black;
-  padding: 			5px;
+  border: thin solid black;
+  padding: 5px;
 }
 
-.exec_tcstep_note
-{
+.exec_tcstep_note {
   padding:2px;
   width:5px;
 }
@@ -1512,13 +1593,99 @@ div.form-border {
 .yellow {
 	color : yellow;
 }
-#footer{
-	width:100%;
+#footer {
+	width: 100%;
 	border-top : 3px double #e3e3e3;
 	position: absolute;
 	bottom: 0;
-	padding-top:5px;
+	padding-top: 5px;
 	font-style: normal;
+}
+
+/* ************************************************************************** */
+/* refactor x-panel */
+
+.x-panel {
+    margin: 10px;
+}
+#tl_users_list.x-panel {
+    margin: 0;
+}
+
+.x-panel-header {
+    padding: 3px 10px !important;
+    color: #555 !important;
+    line-height: 24px !important;
+    border-color: #e3e3e3 !important;
+    background-color: #fff !important;
+    background-image: none !important;
+}
+.x-panel-header .x-tool {
+    margin: 4px 0 4px 4px;
+}
+
+.x-panel-body {
+    padding: 10px !important;
+    border-color: #e3e3e3 !important;
+}
+
+.chosen-container {
+    width: 100% !important;
+}
+
+.x-panel-tbar-noheader .x-toolbar,
+.x-panel-mc .x-panel-tbar .x-toolbar {
+    border: 1px solid #e3e3e3 !important;
+}
+
+.x-panel-tbar.x-panel-tbar-noheader,
+.x-toolbar.x-small-editor.x-toolbar-layout-ct {
+    width: 100% !important;
+
+}
+.x-toolbar {
+    background-image: none !important;
+    background-color: #f0f0f0 !important;
+}
+
+.x-toolbar .x-btn-tl,
+.x-toolbar .x-btn-tr,
+.x-toolbar .x-btn-tc,
+.x-toolbar .x-btn-ml,
+.x-toolbar .x-btn-mr,
+.x-toolbar .x-btn-mc,
+.x-toolbar .x-btn-bl,
+.x-toolbar .x-btn-br,
+.x-toolbar .x-btn-bc,
+.x-grid3-header {
+    background: none !important;
+}
+
+.roleCode5 {
+    background: #efefef !important;
+}
+
+.roleCode8:hover {
+    background: #f5f5f5 !important;
+}
+
+.x-grid3-row-selected,
+.x-grid3-row {
+    border: none !important;
+}
+
+.x-grid3-hd-row {
+    border-bottom: 1px dashed #e3e3e3;
+}
+
+#tl_users_list .x-panel-body {
+    padding: 0 !important;
+}
+
+.x-grid3-body,
+.x-grid3-row,
+.x-grid3-row-table {
+    width: 100% !important;
 }
 
 /* ----- END ---------------------------------------------------------------- */
