@@ -1,0 +1,25 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	margin: 0px;
+}
+
+iframe.navigationBar {
+    width: 100%;
+    height: 89px;
+    border: none;
+}
+
+iframe.siteContent {
+    width: 100%;
+    height: calc(100% - 109px);
+    border: none;
+    padding-top: 20px;
+}
+
+iframe.mainFrame {
+	width: 100%;
+	height: 100%;
+    border: none;
+}
