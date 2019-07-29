@@ -66,7 +66,7 @@ sub { bottom: -0.25em; }
 svg:not(:root) { overflow: hidden; }
 figure { margin: 0;}
 fieldset {
-    border: 1px solid #ddd; margin: 0;
+    border: 1px solid #e3e3e3; margin: 0;
     padding: 3px 5px;
 }
 legend { border: 0; padding: 0; }
@@ -136,7 +136,7 @@ output {
 
 /* ***** GLOBAL HTML ***************************************************************** */
 body, body.testlink {
-	background: #fff; 
+	background: #fff;
 	font-family: 'Trebuchet MS', Arial, Verdana, sans-serif;
 	font-size: 13px;
 	margin:	0px;
@@ -156,12 +156,6 @@ body.landing {
 	margin:			0px;
 	padding:		0px;
 }
-.pull-left { float: left !important; }
-.pull-right { float: right !important; }
-.pull-left.pull-margin { margin-right: 5px; }
-.pull-right.pull-margin { margin-left: 5px; }
-.stick-padding-x { padding-left: 0 !important; padding-right: 0 !important; }
-.stick-padding-y { padding-top: 0 !important; padding-bottom: 0 !important; }
 .border-box, table {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -171,7 +165,7 @@ body.landing {
 	line-height: 22px;
 	padding: 5px 0;
 }
-/** 
+/**
 use together with #header-wrap, to create a section on top of body
 that remain always visible while rest of body content scrolls,
 giving visual experience that body goes under the section on top
@@ -198,12 +192,10 @@ span, div {
 /* h1.title - To avoid problems with ext js css */
 /* 20080529 - franciscom - font-size reduced */
 h1, h1.title {
-    background: #2980b9;
-    color: white;
+    border-left: 5px solid #2980b9;
     margin: 15px;
-    padding: 5px 15px;
+    padding: 0 15px;
     text-align: left;
-    font-size: 85%;
     font-weight: bold;
     line-height: 22px;
 }
@@ -224,11 +216,10 @@ h3, h3.testlink {
 	padding: 		2px;
 }
 
-form
-{
+form {
 	margin: 		0px;
 	padding: 		0px;
-} 
+}
 
 /* 20100225 - eloff - BUGID 3217 - Ext removes bullets from all lists, re-add bullets to our lists */
 .workBack ol {
@@ -246,7 +237,7 @@ form
 }
 .workBack p { line-height: 16px; }
 .workBack h1.title {
-	margin-left: 0; margin-right: 0; 
+	margin-left: 0; margin-right: 0;
 	background-color: #2980b9;
 }
 
@@ -268,45 +259,77 @@ a:hover   {
 /* ***** Menu bar specific ******************************************* */
 div.menu_title {
 	position: relative;
+    box-sizing: border-box;
 	width: 100%;
-	height: 28px;
-	line-height: 16px;
-    padding: 3px 15px;
+	height: 34px;
+	line-height: 22px;
+    padding: 3px 20px 3px 135px;
 }
-div.menu_logo {
-	float: left;
-	height: 100%;
-	margin-right: 20px;
+
+div.menu_title .bold {
+    line-height: 26px;
+    text-indent: 5px;
+    float: left;
+    margin-right: 20px;
+}
+
+div.menu_title a img {
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 5px;
+}
+
+a[href="index.php"] {
+    height: 34px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
 
 div.menu_bar {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    background: #e8e8e8;
-    padding: 5px 15px;
+    background: #f0f0f0;
+    padding: 2px 20px 2px 135px;
     margin: 0 !important;
     line-height: 26px;
     font-size: 12px;
     color: #555;
 }
-div.menu_bar a { 
+div.menu_bar a {
 	line-height: 26px;
 	display: block;
 	float: left;
-	margin-right: 15px;
-}
-div.menu_bar a img {
-	display: block;
-	width: 16px; 
-	height: 16px;
-	margin: 5px;
+	margin-right: 7px;
 }
 
-div.menu_bar input, div.menu_bar select {
-	min-width: 150px;
+div.menu_bar a img {
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+}
+
+div.menu_bar input,
+div.menu_bar select {
+	top: 0 !important;
+    min-width: 100px;
 	line-height: 26px;
 	height: 26px;
+    background-color: #fff !important;
+}
+
+div.menu_bar form {
+    top: 0 !important;
+    height: 24px;
+    line-height: 24px;
+}
+div.menu_bar form select {
+    top: 0 !important;
+    float: right;
+    margin-left: 7px;
 }
 
 select.menu_combo {
@@ -331,7 +354,7 @@ div.testproject_title {
 
 /* **** general classes ************************************* */
 
-/** 
+/**
 use together with body.fixedheader, to create a section on top of body
 that remain always visible while rest of body content scrolls,
 giving visual experience that body goes under the section on top.
@@ -372,7 +395,7 @@ div.workBack {
 
 span.form_label {
 	font-weight:    bold;
-	width:			200px; 
+	width:			200px;
 	float:			left;
 }
 
@@ -393,7 +416,6 @@ div.groupBtn {
 }
 
 div.vertical_menu {
-    font-size: 90%;
     margin: 15px !important;
     padding: 0;
     width: 230px;
@@ -410,13 +432,18 @@ div.vertical_menu a {
     font-weight: normal;
     line-height: 22px;
     padding: 5px 10px;
-    border-top: 1px dashed #ddd;
+    border-top: 1px dashed #e3e3e3;
 }
 div.vertical_menu a:first-child {
 	border: none;
 }
 div.vertical_menu a:hover {
 	background-color: #f0f0f0;
+}
+
+.vertical_menu .chosen-container {
+    margin: 10px 0 15px 0;
+    border-radius: 0 !important;
 }
 div.menu_bubble {
   background: #c8dce8;
@@ -442,32 +469,46 @@ input[type="file"],
 .dummy,
 select,
 textarea,
-button {
+button,
+.chosen-container-multi .chosen-choices,
+.chosen-single {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-   	border: 1px solid #ddd;
+   	border: 1px solid #e3e3e3;
    	margin: 0;
    	line-height: 24px;
    	font-size: 9pt;
    	color: #555;
-   	-moz-border-radius: 2px;
-   	-webkit-border-radius: 2px;
-   	border-radius: 2px;
+   	-moz-border-radius: 2px !important;
+   	-webkit-border-radius: 2px !important;
+   	border-radius: 2px !important;
+    box-shadow: none !important;
 }
-select, 
-input[type="file"] { 
-	height: 26px; 
-	line-height: 26px;
+
+select,
+input[type="file"],
+.chosen-container-multi .chosen-choices,
+.chosen-single {
+	height: 26px !important;
+	line-height: 26px !important;
 }
+
 input[type="checkbox"],
 input[type="radio"] {
 	margin: 6px 0;
 }
+
 input[type="password"],
 input[type="text"],
-input[type="search"] {
+input[type="search"],
+.chosen-container-multi .chosen-choices,
+.chosen-single {
 	padding: 0 3px;
+    color: black;
+    background: none !important;
+    background-color: #fff !important;
+    border: 1px solid #e3e3e3 !important;
 }
 input[type="reset"],
 input[type="submit"],
@@ -475,13 +516,14 @@ input[type="file"],
 input[type="button"],
 .dummy,
 button {
-	padding: 0 7px;
+    background-color: #f0f0f0;
+	padding: 2px 15px;
 }
 input[type="file"] { border-color: transparent !important; }
-.dummy { 
+.dummy {
 	height: 26px;
-	border-color: transparent; 
-	background-color: transparent; 
+	border-color: transparent;
+	background-color: transparent;
 }
 /* Animate */
 input[type="reset"]:hover,
@@ -509,8 +551,32 @@ button:focus,
 select:hover,
 select:active,
 select:focus {
-	border: 1px solid #ccc;
+	border: 1px solid #e3e3e3;
   	outline: none;
+}
+
+.btn-primary,
+input[type="submit"] {
+    color: #fff;
+    background-color: #2980b9 !important;
+    border-color: #2980b9 !important;
+}
+
+.btn-primary:hover,
+input[type="submit"]:hover {
+    background-color: #2f91ce;
+    border-color: #2f91ce;
+}
+
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover {
+    background-color: #f5f5f5;
+    border-color: #e3e3e3;
+}
+
+select {
+    background-color: #fff !important;
 }
 
 fieldset.groupBtn {
@@ -539,15 +605,15 @@ fieldset.groupBtn img {
 	border: 1px solid transparent;
 }
 .cke_chrome {
-	border: 1px solid #ddd !important;
+	border: 1px solid #e3e3e3 !important;
 }
 .cke_top {
-	border-bottom: 1px solid #ddd !important;
-	background: #e8e8e8 !important;
+	border-bottom: 1px solid #e3e3e3 !important;
+	background: #f0f0f0 !important;
 }
 .cke_bottom {
-	border-top: 1px solid #ddd !important;
-	background: #e8e8e8 !important;	
+	border-top: 1px solid #e3e3e3 !important;
+	background: #f0f0f0 !important;
 	box-shadow: none !important;
 }
 
@@ -567,17 +633,17 @@ span.help
 }
 
 #tlhelp {
-	position: 		absolute; 
-	z-index:		100; 
-	padding:		15px; 
-	right:			50px; 
-	top:			50px; 
-	width: 			500px; 
+	position: 		absolute;
+	z-index:		100;
+	padding:		15px;
+	right:			50px;
+	top:			50px;
+	width: 			500px;
 	height:			auto;
-	background: 	#e8e8e8;
+	background: 	#f0f0f0;
 	color:			#555;
-	font-size:		80%; 
-	border: 		1px solid #ddd;
+	font-size:		80%;
+	border: 		1px solid #e3e3e3;
 }
 
 #tlhelp h2 {
@@ -684,20 +750,23 @@ span.unselected a, span.unselected a:visited {
 */
 
 /* ***** Common ********************* */
-table.common {
+table.common, table {
 	margin-bottom: 20px;
 	min-width: 50%;
 	font-size: 12px;
-	background-color: #f0f0f0;
+	background-color: #fff;
 }
 
-table.common th, table.simple th, table.simple_tableruler th {
+table th,
+table.common th,
+table.simple th,
+table.simple_tableruler th {
   	overflow: hidden;
   	color: #555;
   	font-weight: bold;
   	font-size: 12px;
   	padding: 8px 5px;
-  	background-color: #e8e8e8;
+  	background-color: #f0f0f0;
   	min-width: 70px;
 }
 table.common th { padding: 13px 5px; line-height: 16px; }
@@ -705,16 +774,17 @@ table.common th { padding: 13px 5px; line-height: 16px; }
 table tr.odd { background-color: #fff; }
 table tr.even { background-color: #f0f0f0; }
 
-table tr.splitter { 
-	width: 100%; padding: 0; 
-	border-top: 1px dashed #ddd;
+table tr.splitter {
+	width: 100%; padding: 0;
+	border-top: 1px dashed #e3e3e3;
 }
 table tr.splitter td {
 	padding: 0;
 }
 
-table.common td, 
-table.simple td, 
+table td,
+table.common td,
+table.simple td,
 table.simple_tableruler td, th {
   	padding: 8px 5px;
   	line-height: 16px;
@@ -735,7 +805,7 @@ simple_tableruler td p:first-child{
 }
 
 table.common caption, table.smallGrey caption {
-	background: #e8e8e8;
+	background: #f0f0f0;
 	border: 1px solid black;
 	border-bottom-style: none;
 	font-weight: bold;
@@ -747,20 +817,20 @@ table.simple, table.simple_tableruler {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	border: 1px solid #ddd;
+	border: 1px solid #e3e3e3;
 	margin:	15px 0;
 	width: 100%;
 }
 
 table.simple caption, table.simple_tableruler caption{
-	background:     #e8e8e8;
+	background:     #f0f0f0;
 	border: 		thin solid black;
 	border-bottom-style: none;
 	font-weight:    bold;
 }
 
 table.simple_tableruler tr:hover{
-    background-color: #ddd !important;
+    background-color: #e3e3e3 !important;
 }
 
 table.tableruler tr:hover{
@@ -802,7 +872,7 @@ table.link_and_exec {
 }
 
 table.link_and_exec th {
-	background:     #CCC;
+	background:     #e3e3e3;
 }
 
 /* *****  Table Execution History ********* */
@@ -814,7 +884,7 @@ table.exec_history {
 }
 
 table.exec_history th {
-	background:     #CCC;
+	background:     #e3e3e3;
 	border-bottom:	1px solid black;
 	padding:		2px;
 }
@@ -856,12 +926,12 @@ table.test_exec {
 
 .attachment_uploader {
 	text-align: left;
-	background: #e8e8e8;
+	background: #f0f0f0;
 	color: #555;
 	padding: 3px 5px;
 	margin: 15px 0;
 	font-size: 12px;
-	border: 1px solid #ddd;
+	border: 1px solid #e3e3e3;
 	line-height: 24px;
 }
 
@@ -917,7 +987,7 @@ span.light_blocked {
 }
 
 span.light_not_run {
-	background: 		#E8E8E8; /* grey */
+	background: 		#f0f0f0; /* grey */
 }
 
 span.light_not_available {
@@ -1004,7 +1074,7 @@ div.resultBox {
 }
 
 div.resultBox img:hover {
-	cursor:		pointer;	
+	cursor:		pointer;
 }
 
 img.arrow {
@@ -1111,29 +1181,29 @@ div.login_form {
     border-radius: 15px;
 }
 
-div.login_form.large { 
-	border-color:#FFF;	
+div.login_form.large {
+	border-color:#FFF;
 	font-size: large;
 }
 
 
-div.login_form.medium { 
+div.login_form.medium {
     border: 4px;
     border-style:solid;
-	border-color:#FFF;	
+	border-color:#FFF;
 	font-size: medium;
 }
 /*
-div.login_form.medium { 
+div.login_form.medium {
     border-style:solid;
-	border-color:#FFF;	
+	border-color:#FFF;
 	font-size: medium;
 }
 */
 
 
 .big_button{
-	width: 80px; height : 30px; 
+	width: 80px; height : 30px;
 }
 
 
@@ -1144,8 +1214,8 @@ div.login_form.medium {
 
 .option_transfer_container {
 	padding: 5px 15px 15px 15px;
-	background-color: #e8e8e8;
-	border: 1px solid #ddd;
+	background-color: #f0f0f0;
+	border: 1px solid #e3e3e3;
 }
 
 .clickable_icon
@@ -1204,7 +1274,7 @@ table.mainTable-x th {
   color:#15428b;
   font:bold 11px tahoma,arial,verdana,sans-serif;
   padding:5px 3px 4px 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #e3e3e3;
   line-height:15px;
   background:transparent url(../images/white-top-bottom.gif) repeat-x 0 -1px;
 }
@@ -1219,70 +1289,70 @@ th.testlink, td.testlink, tr.testlink td {
 img.clickable { margin-left: 3px; margin-right: 3px; }
 
 
-/* 
+/*
 @since 1.9.6
-@internal notice: 
+@internal notice:
 !important is CRITIC because without it, the alternate row color of ext-js grid will take precedence
 
 @internal revisions
-20121230 - franciscom - used on ext-js table implementation of users view 
+20121230 - franciscom - used on ext-js table implementation of users view
 
 */
-.roleCode9 
+.roleCode9
 {
   background-color: acqua !important;
   color: black;
 }
 
-.roleCode8 
+.roleCode8
 {
   background-color: white !important;
   color: black;
 }
 
-.roleCode7 
+.roleCode7
 {
   background-color: wheat !important;
   color: black;
 }
 
-.roleCode6 
+.roleCode6
 {
   background-color: #FFA !important;
   color: black;
 }
 
-.roleCode5 
+.roleCode5
 {
   background-color: pink !important;
   color: black;
 }
 
-.roleCode4 
+.roleCode4
 {
   background-color: cyan !important;
   color: black;
 }
 
-.roleCode3 
+.roleCode3
 {
   background-color: grey !important;
   color: black;
 }
 
-.roleCode2 
+.roleCode2
 {
   background-color: yellow !important;
   color: black;
 }
 
-.roleCode1 
+.roleCode1
 {
   background-color: yellow !important;
   color: black;
 }
 
-.roleCode0 
+.roleCode0
 {
   background-color: seashell !important;
   color: black;
@@ -1309,16 +1379,34 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 /* *********************************************************************************** */
 /* Taken from Ext JS, and adapted */
 
-.x-tl-panel{ border-style:solid;border-color:#ddd;border-width:0; margin-bottom: 15px;}
+.x-tl-panel{
+    border-style:solid;
+    border-color:#e3e3e3;
+    border-width:0;
+    margin-bottom: 15px;
+}
+
 .x-tl-panel-header {overflow:hidden;color:#555;font:bold 12px tahoma,arial,verdana,sans-serif;
-                   padding:4px 10px;border:1px solid #ddd;line-height: 22px;
-                   background-color: #e8e8e8;}
-.x-tl-panel-body {line-height: 20px; border:1px solid #ddd;border-top:0 none;overflow:hidden;background:white !important; }
-.x-tl-panel-bbar {border:1px solid #ddd;border-top:0 none;overflow:hidden;padding:2px;}
-.x-tl-panel-tbar {border:1px solid #ddd;border-top:0 none;overflow:hidden;padding:2px;}
-.x-tl-panel-tbar-noheader .x-toolbar,.x-tl-panel-mc .x-tl-panel-tbar .x-toolbar{border-top:1px solid #ddd;
+                   padding:4px 10px;border:1px solid #e3e3e3;line-height: 22px;
+                   background-color: #f0f0f0;}
+.x-tl-panel-body {
+    line-height: 0px;
+    border: 1px solid #e3e3e3;
+    border-top:0 none;
+    overflow:hidden;
+    background:white !important;
+    padding: 0 !important;
+}
+.x-tl-panel-bbar {
+    border: 1px solid #e3e3e3;
+    border-top: 0 none;
+    overflow: hidden;
+    padding: 2px;
+}
+.x-tl-panel-tbar {border:1px solid #e3e3e3;border-top:0 none;overflow:hidden;padding:2px;}
+.x-tl-panel-tbar-noheader .x-toolbar,.x-tl-panel-mc .x-tl-panel-tbar .x-toolbar{border-top:1px solid #e3e3e3;
                                                                           border-bottom:0 none;}
-.x-tl-panel-body-noheader,.x-tl-panel-mc .x-tl-panel-body{border-top:1px solid #ddd;}
+.x-tl-panel-body-noheader,.x-tl-panel-mc .x-tl-panel-body{border-top:1px solid #e3e3e3;}
 .x-tl-panel-header{overflow:hidden;}
 .x-tl-panel-tl .x-tl-panel-header{color:#15428b;font:bold 11px tahoma,arial,verdana,sans-serif;
                                padding:5px 0 4px 0;border:0 none;background:transparent;}
@@ -1328,7 +1416,7 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
                         vertical-align:middle;margin-right:4px;margin-top:-1px;margin-bottom:-1px;}
 .x-tl-panel-tc{background:transparent url(../images/top-bottom.gif) repeat-x 0 0;overflow:hidden;}
 .x-tl-panel-tl{background:transparent url(../images/corners-sprite.gif) no-repeat 0 0;
-               padding-left:6px;border-bottom:1px solid #ddd;}
+               padding-left:6px;border-bottom:1px solid #e3e3e3;}
 .x-tl-panel-tr{background:transparent url(../images/corners-sprite.gif) no-repeat right 0;
                padding-right:6px;}
 .x-tl-panel-bc{background:transparent url(../images/top-bottom.gif) repeat-x 0 bottom;}
@@ -1367,24 +1455,18 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
     text-align:left;
 }
 .tools_bar_bottom { margin-top: 10px; }
-.tools_bar_bottom button, 
+.tools_bar_bottom button,
 .tools_bar_bottom input[type="button"],
 .tools_bar_bottom input[type="submit"] { margin-right: 10px; }
 
 /* *********************************************************************************** */
 /* Override Bootstrap */
-.btn-primary {
-	color: #fff !important;
-	border-color: #2980b9 !important;
-	background-color: #2980b9 !important;
-}
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:focus {
-	background-color: #2c88c5 !important;
-}
 
 .nav { font-size: 12px !important; line-height: 22px;}
 .nav > li > a { padding: 5px 10px !important; }
+
+.chosen-container {
+    display: block !important;
+}
 
 /* ----- END ------------------------------------------------------------------------- */

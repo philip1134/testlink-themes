@@ -33,14 +33,6 @@ using ``grayskin`` as:
 
 .. code:: php
 
-    /* almostly line 98 */
+    /* almostly line 456 */
     /** GUI themes (base for CSS and images)- modify if you create own one */
     $tlCfg->theme_dir = 'gui/themes/grayskin/';
-
-modify frame.css
-~~~~~~~~~~~~~~~~
-
-as `pr209 <https://github.com/TestLinkOpenSourceTRMS/testlink-code/pull/209>`__,
-the ``<link>`` to frame.css is hard coded in testlink code, and it links to
-``default/css/frame.css``, so we copy ``grayskin/css/frame.css`` to overwrite
-``default/css/frame.css``.
