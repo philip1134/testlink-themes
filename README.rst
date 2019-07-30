@@ -31,7 +31,7 @@ modify config
 ~~~~~~~~~~~~~
 
 modify testlink config file ``config.inc.php`` to set theme dir, for example,
-using ``grayskin`` as:
+we say ``grayskin``:
 
 .. code:: php
 
