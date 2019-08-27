@@ -39,7 +39,7 @@ we say ``grayskin``:
     /** GUI themes (base for CSS and images)- modify if you create own one */
     $tlCfg->theme_dir = 'gui/themes/grayskin/';
 
-modify frame.css
+--modify frame.css--
 ~~~~~~~~~~~~~~~~
 
 as `pr209 <https://github.com/TestLinkOpenSourceTRMS/testlink-code/pull/209>`__,
