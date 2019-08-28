@@ -34,6 +34,6 @@ using ``grayskin`` as:
 
 .. code:: php
 
-    /* almostly line 456 */
+    /* almostly line 76 */
     /** GUI themes (base for CSS and images)- modify if you create own one */
     $tlCfg->theme_dir = 'gui/themes/grayskin/';

@@ -147,94 +147,132 @@ output {
     color: #555555;
 }
 
+
 /* ***** GLOBAL HTML ***************************************************************** */
-body, body.testlink {
-	background: #fff;
-	font-family: 'Trebuchet MS', Arial, Verdana, sans-serif;
-	font-size: 13px;
-	margin:	0px;
-	padding: 0px;
-	color: #555;
-}
-body:before, body:after, .clearfix {
-    content: " ";
-    display: table;
-    clear: both;
+html, body {
+    height: 100%;
+    line-height: 20px;
+    width: 100%;
+    margin: 0px;
 }
 
-body.landing {
-	background:  	#2980b9; /* 059 */
-	font-family: 	'Trebuchet MS', Arial, Verdana, sans-serif;
-	font-size: 		small;
-	margin:			0px;
-	padding:		0px;
+body, body.testlink {
+    background-color: white !important;
+    font-family: 'Trebuchet MS', Arial, Verdana, sans-serif;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    height:100%;
+    color: #555;
 }
-.border-box, table {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+iframe {
+    position: relative;
+    border: none;
 }
-.labelHolder {
-	line-height: 22px;
-	padding: 5px 0;
+iframe.sideBarFrame {
+    width:100%;
+    height:calc(100% - 57px);
 }
+iframe.contentFrame-small {
+    border: none;
+    height:calc(100% - 5px);
+    width: calc(100% - 150px);
+    padding-left: 2px;
+}
+iframe.contentFrame-large {
+    border: none;
+    height:calc(100% - 5px);
+    width: calc(100% - 50px);
+    padding-left: 2px;
+}
+iframe.treeframe {
+    width:calc(99% - 70%);
+    height:calc(100% - 35px);
+    float:left;
+}
+iframe.workframe {
+    width:calc(100% - 29%);
+    height:calc(100% - 35px);
+}
+.sidebar.compact.sidebar-large {
+    width:150px !important;
+}
+.sidebar.compact.sidebar-small {
+    width:50px !important;
+}
+span.menu-text-shown {
+    display:block;
+}
+span.menu-text-hidden {
+    display:none;
+}
+div.white-space {
+    height:20px;
+    background-color:whitesmoke;
+}
+
+ul.nav.nav-tabs.padding-18 {
+    padding-top: 5px;
+}
+.x-tree-node {
+    font-size:13px!important;
+}
+
+ul.nav.nav-pills {
+    line-height: 30px !important;
+}
+.nav>li>a {
+    font-size: 13px !important;
+    padding: 0 15px !important;
+}
+.nav-pills>li>a {
+    border-radius: 3px;
+}
+
 /**
 use together with #header-wrap, to create a section on top of body
 that remain always visible while rest of body content scrolls,
 giving visual experience that body goes under the section on top
 */
 body.fixedheader {
-	padding-top:	120px !important;
-	padding-top:	0; /* IE 6 does not understand fixed */
+    padding-top:    120px !important;
+    padding-top:    0; /* IE 6 does not understand fixed */
 }
 
-img {
-	border:	 none;
-}
-
-pre
-{
-	font-family : 	Arial, Helvetica, sans-serif;
+pre {
+    font-family :   Arial, Helvetica, sans-serif;
 }
 
 span, div {
-	margin: 		0px;
-	padding:		0px;
+    margin:         0px;
+    padding:        0px;
 }
 
-/* h1.title - To avoid problems with ext js css */
-/* 20080529 - franciscom - font-size reduced */
 h1, h1.title {
-    border-left: 5px solid #2980b9;
-    margin: 15px;
-    padding: 0 15px;
+    padding-left: 15px;
+    line-height: 30px;
     text-align: left;
+    font-size: 16px;
     font-weight: bold;
-    line-height: 22px;
+    border-left: 7px solid #888;
 }
-
 
 h2 {
-	font-size: 110%;
-	font-weight: bold;
-	line-height: 22px
+    font-size:      110%;
+    font-weight:    bold;
 }
-h2 img {
-	height: 16px;
-	margin: 3px 0;
-}
+
 h3, h3.testlink {
-	font-size:		105%;
-	margin-bottom:	2px;
-	padding: 		2px;
+    font-size:      105%;
+    margin-bottom:  2px;
+    padding:        2px;
 }
 
 form {
-	margin: 		0px;
-	padding: 		0px;
+    margin:         0px;
+    padding:        0px;
 }
 
-/* 20100225 - eloff - BUGID 3217 - Ext removes bullets from all lists, re-add bullets to our lists */
 .workBack ol {
     margin: 1em 40px;
     list-style-type: decimal;
@@ -244,29 +282,23 @@ form {
     list-style-type: disc;
     list-style-position: outside;
 }
-.workBack .x-panel {
-	margin-left: 0;
-	margin-right: 0;
-}
-.workBack p { line-height: 16px; }
-.workBack h1.title {
-	margin-left: 0; margin-right: 0;
-	background-color: #2980b9;
+
+.panel {
+    background-color: #fff !important;
+    border-color: #f0f0f0 !important;
+    box-shadow: none !important;
 }
 
 /* ***** Links ***** */
-/* A Visited link is still blue */
-a:visited, a:link, a:active {
-	color: #2980b9;
-	text-decoration: none;
+a:not(.btn-primary) {
+    color:          #059;
+    text-decoration: none;
 }
+
 /* A link being hovered over is red*/
-a:hover   {
-	color: #2980b9;
-	text-decoration: none;
-}
-.direct_link {
-	line-height: 20px;
+a:hover {
+    color:          #900;
+    text-decoration: none;
 }
 
 /* ***** Menu bar specific ******************************************* */
@@ -298,7 +330,7 @@ div.menu_title a img {
 }
 
 a[href="index.php"] {
-    height: 34px;
+    height: 40px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -390,23 +422,21 @@ form .menu_bar input[type="button"] {
 }
 
 select.menu_combo {
-	background: #eee;
-	border-style: none;
-	font-size: smaller;
-	font-weight: bold;
+    background: #eee;
+    border-style: none;
+    font-size: smaller;
+    font-weight: bold;
 }
-
 
 /* ***** Main page specific ***************************************** */
 
 div.testproject_title {
-	background:		#2980b9;
-	border: 		1px solid black;
-	color:			white;
-	font-size:		110%;
-	padding: 		2px;
+    background:     #059;
+    border:         1px solid black;
+    color:          white;
+    font-size:      110%;
+    padding:        2px;
 }
-
 
 
 /* **** general classes ************************************* */
@@ -415,101 +445,107 @@ div.testproject_title {
 use together with body.fixedheader, to create a section on top of body
 that remain always visible while rest of body content scrolls,
 giving visual experience that body goes under the section on top.
-
 Added z-index to solve issue regaring content generated by EXT-JS library
 present on page (example grid())
-
 On chrome seems not work
 */
 #header-wrap {
-	background:		#eee;
-	border-bottom:	1px solid #000;
-	height: 100px;
-	position: fixed;
-	top:  0;
-	width:  100%;
-	z-index:  999;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 /* background for working area (tables and forms) */
 div.workBack {
-	text-align:	left;
-	margin: 15px;
+    text-align: left;
+    /*background: #f0f0f0;*/
+    background-color: #fff;
+    border: none;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.workBack form {
+    text-align: center;
 }
 
 /* .label is used to magnify label for active objects */
 .bold, .label {
-	font-weight:    bold;
+    font-weight:    bold;
 }
 
 .italic {
-	font-style: 	italic;
+    font-style:     italic;
 }
 
 .onright {
-	float: 			right;
+    float:          right;
 }
 
 span.form_label {
-	font-weight:    bold;
-	width:			200px;
-	float:			left;
+    font-weight:    bold;
+    width:          200px;
+    float:          left;
 }
 
 /* **** Navigation, menu and buttons ************************************* */
 
 /* for tree menu */
 div.tree {
-	background: 	#EEE;
-	padding: 		3px;
-	border: 		1px solid #808080;
-	margin:			3px;
-	overflow: 		auto; /* BUGID: SF1243287 */
+    padding:        3px;
+    border:         1px solid #808080;
+    margin:         3px;
+    overflow:       auto; /* BUGID: SF1243287 */
 }
 
 div.groupBtn {
-	padding: 0;
-	margin: 15px 0;
+    margin-top: 20px;
+    text-align: left;
 }
 
 div.vertical_menu {
-    margin: 15px !important;
-    padding: 0;
-    width: 230px;
-    line-height: 0;
+    font-size: 14px;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 340px !important;
 }
 
 div.vertical_menu h2 {
-	background:     #FFC;
-	border-style:	none;
-	font-weight:    bold;
+    background:     #FFC;
+    border-style:   none;
+    color:          black;
+    font-weight:    bold;
 }
 
 div.vertical_menu a {
-    font-weight: normal;
-    line-height: 22px;
-    padding: 5px 10px;
-    border-top: 1px dashed #e3e3e3;
-}
-div.vertical_menu a:first-child {
-	border: none;
-}
-div.vertical_menu a:hover {
-	background-color: #f0f0f0;
+    font-weight:    normal;
 }
 
-.vertical_menu .chosen-container {
-    margin: 10px 0 15px 0;
-    border-radius: 0 !important;
+.vertical_menu>div,
+.list-group {
+    padding: 0 !important;
+    margin: 0 20px 20px 20px !important;
 }
+
+.vertical_menu>div {
+    line-height: 30px;
+}
+
+.list-group-item {
+    line-height: 30px;
+    font-size: 14px !important;
+}
+
 div.menu_bubble {
   background: #c8dce8;
   padding: 3px;
 }
 
 div.menu_bubble h3{
-	margin: 0px 0px 8px 8px;
-	line-height:1.4em;
+    margin: 0px 0px 8px 8px;
+    line-height:1.4em;
 }
 
 /** Buttons
@@ -698,106 +734,94 @@ fieldset.groupBtn img {
     float: left;
     margin: 4px;
 }
-.cke_chrome {
-	border: 1px solid #e3e3e3 !important;
-}
-.cke_top {
-	border-bottom: 1px solid #e3e3e3 !important;
-	background: #f0f0f0 !important;
-}
-.cke_bottom {
-	border-top: 1px solid #e3e3e3 !important;
-	background: #f0f0f0 !important;
-	box-shadow: none !important;
-}
 
 /* ***** Help ***************************************************************************
  * This allows link help from text e.g. instruction
  * Using: <span class="help" onclick="javascript:open_popup('../help/glosary.html#testspec');">
- * 			Test Specification</span>
+ *          Test Specification</span>
  */
 img.help {
-	vertical-align: top;
-	float:			right;
+    vertical-align: top;
+    float:          right;
 }
 span.help
 {
-	cursor: 		help;
-	text-decoration: underline;
+    cursor:         help;
+    text-decoration: underline;
 }
 
 #tlhelp {
-	position: 		absolute;
-	z-index:		100;
-	padding:		15px;
-	right:			50px;
-	top:			50px;
-	width: 			500px;
-	height:			auto;
-	background: 	#f0f0f0;
-	color:			#555;
-	font-size:		80%;
-	border: 		1px solid #e3e3e3;
+    position:       absolute;
+    z-index:        100;
+    padding:        5px;
+    right:          50px;
+    top:            50px;
+    width:          500px;
+    height:         auto;
+    background:     #059;
+    color:          white;
+    font-size:      80%;
+    border:         medium solid #808080;
 }
 
 #tlhelp h2 {
-	font-weight: bold;
-	font-size: 120%;
-	margin: 0;
-	padding: 0;
-	border-bottom: 1px solid #aaa;
+    font-weight: bold;
+    font-size: 120%;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
 }
 
 #tlhelp p {
-	margin: 0 0 1em 0.5em;
+    margin: 0 0 1em 0.5em;
 }
+
 
 /* ***** Messages ******************************************************* */
 /* show results of SQL actions or important information for user */
 .error, .info, .warning, div.user_feedback {
-	font-size:		110%;
-	text-align:		center;
-	font-weight:    bold;
-	line-height: 	22px;
-	padding: 		5px;
+    font-size:      110%;
+    text-align:     center;
+    font-weight:    bold;
+    padding:        3px;
 }
 
 .tab-error, .tab-warning, .tab-success{
-	text-align:		left;
-	font-weight:    bold;
+    text-align:     left;
+    font-weight:    bold;
 }
 
 
 .error, .tab-error {
-	color:			#B22222; /* firebrick (red) */
+    color:          #B22222; /* firebrick (red) */
 }
 
 .warning, .tab-warning {
-	color:			#FF6600; /* safety orange */
+    color:          #FF6600; /* safety orange */
 }
 
 .success, .tab-success {
-	color:			#16a085; /* sea green */
+    color:          #006400; /* darkgreen */
 }
 
 .info, div.user_feedback{
-	color:	#2980b9; /* blize hole blue */
+    color:          black;
 }
 
 div.messages {
-	background-color:	#2980b9;
-	color:				white;
-	margin: 			3px;
-	padding:			3px;
+    background-color:   #059;
+    color:              white;
+    margin:             3px;
+    padding:            3px;
 }
 
 div.messages_rounded {
-	background-color:	#2980b9;
-	color:				white;
-	margin: 			3px;
-	padding:			3px;
+    background-color:   #059;
+    color:              white;
+    margin:             3px;
+    padding:            3px;
     border-style:solid;
-    border-color:#2980b9;
+    border-color:#059;
     border-radius: 10px;
 }
 
@@ -806,28 +830,28 @@ div.messages_rounded {
 /* add under h1 tag */
 
 div.tabMenu {
-	margin-top:		0px;
-	padding:		0px 30px 10px 30px;
+    margin-top:     0px;
+    padding:        0px 30px 10px 30px;
 }
 
 span.selected, span.unselected {
-	border: 		1px solid black;
-	border-top-style: none;
-	font-weight:    bold;
-	padding: 		5px;
+    border:         1px solid black;
+    border-top-style: none;
+    font-weight:    bold;
+    padding:        5px;
 }
 
 span.selected {
-	background:		#2980b9;
-	color:			white;
+    background:     #059;
+    color:          white;
 }
 
 span.unselected:hover {
-	background:		#BCD;
+    background:     #BCD;
 }
 
 span.unselected a, span.unselected a:visited {
-	color:    		black;
+    color:          black;
 }
 
 
@@ -836,226 +860,270 @@ span.unselected a, span.unselected a:visited {
 *
 * Standard table classes:
 *
-* "common" 		- often used for view arrays
-* "simple" 		- often used for forms
-* "smallGrey" 	- often used for options / filters
-* "invisible" 	- no borders
+* "common"      - often used for view arrays
+* "simple"      - often used for forms
+* "smallGrey"   - often used for options / filters
+* "invisible"   - no borders
 * !!! Do not add new table kinds !!! (there is bunch of wild table definitions below)
 */
 
 /* ***** Common ********************* */
-table.common, table {
-	margin-bottom: 20px;
-	min-width: 50%;
-	font-size: 12px;
-	background-color: #fff;
+table.common {
+    min-width: 50%;
 }
 
-table th,
-table.common th,
-table.simple th,
-table.simple_tableruler th {
-  	overflow: hidden;
-  	color: #555;
-  	font-weight: bold;
-  	font-size: 12px;
-  	padding: 8px 5px;
-  	background-color: #f0f0f0;
-  	min-width: 70px;
-}
-table.common th { padding: 13px 5px; line-height: 16px; }
-
-table tr.odd { background-color: #fff; }
-table tr.even { background-color: #f0f0f0; }
-
-table tr.splitter {
-	width: 100%; padding: 0;
-	border-top: 1px dashed #e3e3e3;
-}
-table tr.splitter td {
-	padding: 0;
+table th {
+    overflow: hidden;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 7px 10px;
 }
 
-table td,
-table.common td,
-table.simple td,
-table.simple_tableruler td, th {
-  	padding: 8px 5px;
-  	line-height: 16px;
+table td {
+    padding: 5px 10px;
+    line-height: 20px;
 }
-table.common th, table.common td {
-	vertical-align: top;
+
+table td, th {
+    vertical-align: top;
+    text-align: left;
 }
-table.simple td, table.simple_tableruler td, th {
-	vertical-align: middle;
+
+.table>thead>tr>th {
+    vertical-align: middle !important;
 }
-table td { position: relative; font-size: 12px; }
-table td.middle { vertical-align: middle; }
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    line-height: 18px !important;
+    padding: 6px 10px !important;
+}
+
+th img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: left;
+    margin-right: 2px;
+}
+
+td p {
+    margin: 0 !important;
+}
 
 /* Margin fix for paragraphs in steps table */
 table.common td p:first-child, table.simple td p:first-child,
 simple_tableruler td p:first-child{
-	margin-top: 0;
+    margin-top: 0;
 }
 
 table.common caption, table.smallGrey caption {
-	background: #f0f0f0;
-	border: 1px solid black;
-	border-bottom-style: none;
-	font-weight: bold;
+    border-bottom-style: none;
+    font-weight:    bold;
 }
 
 
 /* ***** Simple Table (often used to show data) ***************** */
 table.simple, table.simple_tableruler {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	border: 1px solid #e3e3e3;
-	margin:	15px 0;
-	width: 100%;
+    width:          100%;
 }
 
 table.simple caption, table.simple_tableruler caption{
-	background:     #f0f0f0;
-	border: 		thin solid black;
-	border-bottom-style: none;
-	font-weight:    bold;
+    background:     #CCC;
+    border:         thin solid black;
+    border-bottom-style: none;
+    font-weight:    bold;
 }
 
 table.simple_tableruler tr:hover{
-    background-color: #e3e3e3 !important;
+    background-color: #CDDEF3 !important;
 }
 
-table.tableruler tr:hover{
-    background-color: #fff !important;
+table.tableruler tbody tr:hover{
+    background-color: #FFF !important;
 }
 
 /* Used for filters and options settings */
 table.smallGrey {
-	font-size:		smaller;
-	margin-right:	0px;
+    font-size:      smaller;
+    margin-bottom:  10px;
+    margin-right:   0px;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+table.smallGrey td {
+    padding: 2px;
+}
+table.smallGrey td input {
+    box-sizing: border-box;
+    width: 100% !important;
+}
+table.smallGrey td input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px;
+    margin: 4px auto;
 }
 
+table.no-border {
+    border:         0px none;
+    font-size:      90%;
+    margin:         5px 0px;
+    width:          auto;
+}
 
 table.invisible {
-	border: 		0px none;
-	margin:			5px 0px;
-	width:			auto;
+    border:         0px none;
+    font-size:      90%;
+    margin:         5px 0px;
+    width:          auto;
 }
 
 table.mainTable{
-	background: 	#EEE;
-	border: 		1px double black;
-	min-width:		200px;
+    border:         1px double black;
+    min-width:      200px;
 }
 
 table.mainTable td th {
-	border: 		thin dotted black;
+    border:         thin dotted black;
 }
 
 table.mainTable th {
-	background:     #FFC;
+    background:     #FFC;
 }
 
 table.link_and_exec {
-	background:     #EEE;
-	border: 		1px solid black;
-	margin-bottom:	10px;
-	margin-right:	0px;
+    border:         1px solid black;
+    margin-bottom:  10px;
+    margin-right:   0px;
 }
 
 table.link_and_exec th {
-	background:     #e3e3e3;
+    background:     #CCC;
 }
 
 /* *****  Table Execution History ********* */
 table.exec_history {
-	background:     #EEE;
-	border: 		thin solid black;
-	margin:			20px;
-	width:			95%;
+    border:         thin solid black;
+    font-size:      90%;
+    margin:         20px;
+    width:          95%;
 }
 
 table.exec_history th {
-	background:     #e3e3e3;
-	border-bottom:	1px solid black;
-	padding:		2px;
+    background:     #CCC;
+    border-bottom:  1px solid black;
+    padding:        2px;
 }
 
 
 /* >>>> Martin: @TODO REMOVE! do not use tables to structure page <<<<<<< */
-table.notesBox td
-{
-	vertical-align: top;
+table.notesBox td {
+    vertical-align: top;
 }
-td.checkbox_cell{
-	width: 			1px;
+td.checkbox_cell {
+    width:          1px;
 }
-td.tcase_id_cell{
-	width: 			25px;
+td.tcase_id_cell {
+    width:          25px;
 }
 table.srs_view td {
-	border: 		1px solid black;
+    border:         1px solid #e3e3e3;
 }
 
 table.test_exec {
-	background: 	#FFC;
-	color: 			black;
-	padding: 		12px;
-	width: 			100%;
+    background:     #FFC;
+    color:          black;
+    padding:        12px;
+    width:          100%;
 }
 
-.dataTables_length, .dataTables_filter {
-	margin-bottom: 5px;
-}
-.dataTables_info, .dataTables_paginate,
-.dataTables_length, .dataTables_filter {
-	line-height: 22px;
-}
-.dataTables_paginate .paginate_button {
-	padding-top: 0  !important;
-	padding-bottom: 0 !important;
+/* To adjust Bootstrap tables */
+.table {
+  font-size: 12px;
+  width: 100%;
 }
 
-.attachment_uploader {
-	text-align: left;
-	background: #f0f0f0;
-	color: #555;
-	padding: 3px 5px;
-	margin: 15px 0;
-	font-size: 12px;
-	border: 1px solid #e3e3e3;
-	line-height: 24px;
+.table .thead-dark th,
+.table .thead-light th {
+  color: #555;
+  background-color: #f0f0f0;
+  border-color: #e3e3e3;
 }
 
-.tl-msg {
-	font-size: 12px;
-	color: #a2a2a2;
+.table-bordered,
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    border: 1px solid #e3e3e3 !important;
+    border-top: none;
 }
+
+table.x-btn,
+.x-btn-small,
+.x-btn-ml,
+.x-btn-mc,
+.x-btn-mr,
+table.x-btn button {
+    height: 24px !important;
+    line-height: 24px !important;
+}
+
+table.x-btn button {
+    border: none !important;
+    padding-left: 20px !important;
+}
+
+.x-btn {
+    margin: 0 10px;
+}
+
+.x-grid3-hd-row td {
+    border: none !important;
+}
+
+.x-grid3-header-offset table {
+    width: 100% !important;
+}
+
+.x-toolbar-cell { padding: 0 !important; }
 
 /* ***** Execution & Results ********************************************************* */
 div.passed, div.failed, div.blocked, div.not_run {
-	color: 			white;
-	margin: 		8px;
-	padding: 		6px;
-	text-align: 	center;
+    color:          white;
+    margin:         8px;
+    padding:        6px;
+    text-align:     center;
 }
 
 div.passed {
-	background:		#006400; /* darkgreen */
+    background:     #006400; /* darkgreen */
 }
 
 div.failed {
-	background:		#B22222; /* firebrick (red) */
+    background:     #B22222; /* firebrick (red) */
 }
 
 div.blocked {
-	background:		#00008B; /* darkblue */
+    background:     #00008B; /* darkblue */
 }
 
 div.not_run {
-	background:		black;
+    background:     black;
+}
+
+div.backup_exist {
+    color:          black;
+    margin:         8px;
+    padding:        6px;
+    text-align:     center;
+    background:     #EEE;
 }
 
 
@@ -1063,294 +1131,292 @@ div.not_run {
 span.light_passed, span.light_failed, span.light_blocked,
 span.light_not_run, span.light_not_available, span.light_unknown
 {
-	color:				black;
-	padding:			3px;
+    color:              black;
+    padding:            3px;
 }
 
 
 span.light_passed {
-	background:			#D5EED5; /* green */
+    background:         #D5EED5; /* green */
 }
 
 span.light_failed {
-	background: 		#EED5D5; /* red */
+    background:         #EED5D5; /* red */
 }
 
 span.light_blocked {
-	background: 		#D5D5EE; /* blue */
+    background:         #D5D5EE; /* blue */
 }
 
 span.light_not_run {
-	background: 		#f0f0f0; /* grey */
+    background:         #E8E8E8; /* grey */
 }
 
 span.light_not_available {
-	background: 		#F8EEDD; /* yellow */
+    background:         #F8EEDD; /* yellow */
 }
 
 span.light_unknown {
-	background: 		#DDFFFF; /* cyan; */
+    background:         #DDFFFF; /* cyan; */
 }
 
-/* ***** render test result status (coloring background) ************************* */
+/* ***** render test result status (coloring background) ******************** */
 .passed {
-	color: 			white;
-	background:		#006400; /* darkgreen */
+    color:          white;
+    background:     #006400; /* darkgreen */
 }
 
 .failed {
-	color: 			white;
-	background:		#B22222; /* firebrick (red) */
+    color:          white;
+    background:     #B22222; /* firebrick (red) */
 }
 
 .blocked {
-	color: 			white;
-	background:		#00008B; /* darkblue */
+    color:          white;
+    background:     #00008B; /* darkblue */
 }
 
 .not_run {
-	color: 			white;
-	background:		black;
+    color:          white;
+    background:     black;
 }
 
 .not_available {
-	color: 			black;
-	background:		#DAA520; /* goldenyellow */
+    color:          black;
+    background:     #DAA520; /* goldenyellow */
 }
 
 .unknown {
-	color: 			black;
-	background:		#00FFFF; /* cyan; */
+    color:          black;
+    background:     #00FFFF; /* cyan; */
 }
 
-/* ***** render test result status (coloring text) ************************* */
+/* ***** render test result status (coloring text) ************************** */
 .passed_text {
-	color:    #006400; /* darkgreen */
+    color:    #006400; /* darkgreen */
   font-weight: bold;
 }
 
 .failed_text {
-	color:		#B22222; /* firebrick (red) */
+    color:      #B22222; /* firebrick (red) */
   font-weight: bold;
 }
 
 .blocked_text {
-	color:		#00008B; /* darkblue */
+    color:      #00008B; /* darkblue */
   font-weight: bold;
 }
 
 .not_run_text {
-	color:    black;
+    color:    black;
   font-weight: bold;
 }
 
 .not_available_text {
-	color:    black;
+    color:    black;
   font-weight: bold;
 }
 
 .unknown_text {
-	color: 			#00FFFF; /* cyan; */
+    color:          #00FFFF; /* cyan; */
   font-weight: bold;
 }
 
 
-/* ***** MISC ************************************************************************ */
+/* ***** MISC *************************************************************** */
 /* Please, be carefull to be consistent if you add a new definition */
 
 /* execution boxes (result, test scenario, notes) */
 div.resultBox {
-	background: 	white;
-	border: 		medium solid #808080;
-	color: 			black;
-	margin: 		0px 12px 12px 12px;
-	padding: 		12px;
+    background:     white;
+    border:         medium solid #808080;
+    color:          black;
+    margin:         0px 12px 12px 12px;
+    padding:        12px;
 }
 
 div.resultBox img:hover {
-	cursor:		pointer;
+    cursor:     pointer;
 }
 
 img.arrow {
-	width: 			16px;
-	height: 		9px;
+    width:          16px;
+    height:         9px;
 }
 
 div.exec_history {
-	background:		#FFF;
-	padding: 		0px 3px;
+    background:     #FFF;
+    padding:        0px 3px;
 }
 
 span.type1 {
-	background:		#2980b9;
-	border: 		1px solid black;
-	color:			white;
-	margin-bottom:	4px;
-	padding: 		2px;
-	text-align: 	left;
+    background:     #059;
+    border:         1px solid black;
+    color:          white;
+    font-size:      110%;
+    margin-bottom:  4px;
+    padding:        2px;
+    text-align:     left;
 }
 
 
 div.fullpage_head {
-	text-align: 	center;
-	width: 			100%;
-	background: 	#f0f0f0;
-	margin: 		0px;
-	padding: 		5px 0px;
-	font-weight : 	bold;
-	font-variant : 	small-caps;
-	letter-spacing: 5px;
+    text-align:     center;
+    width:          100%;
+    background:     #CDE;
+    margin:         0px;
+    padding:        5px 0px;
+    font-weight :   bold;
+    font-variant :  small-caps;
+    letter-spacing: 5px;
 }
 
 /* For the HTML forms */
 div.forms {
-	text-align: 	left;
-	margin: 		20%;
-	margin-top: 	20px;
-	background: 	#f0f0f0;
-	padding: 		25px;
-	border: 		1px;
+    text-align:     left;
+    margin:         20%;
+    margin-top:     20px;
+    background:     #CDE;
+    padding:        25px;
+    border:         1px;
 }
 
 /* Martin: @TODO clean-up required */
 .hint, .time_stamp_creation, .time_stamp_last_change  {
-	font-style: 	italic;
+    font-style:     italic;
 }
 
 /* Martin: @TODO clean-up required ; use .label */
 .legend_container, .labelHolder, div.show_hide_title {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /* added padding to allow good effect with Nifty */
 div.exec_history_title {
-	font-weight:	bold;
-	padding: 		2px;
+    font-weight:    bold;
+    padding:        2px;
 }
 
 div.notes{
-	background: 	#F5F5F5; 	/* whitesmoke */
-	border: 		1px solid black;
-	color: 			black;
-	margin: 		1px;
-	padding: 		1px;
-	width: 			100%;
+    background:     #F5F5F5;    /* whitesmoke */
+    border:         1px solid black;
+    color:          black;
+    margin:         1px;
+    padding:        1px;
+    width:          100%;
 }
 
 div.test_exec {
-	background: 	#FFC;
-	border: 		thin dashed black;
-	color: 			black;
-	padding: 		12px;
-	width: 			100%;
+    background:     #FFC;
+    border:         thin dashed black;
+    color:          black;
+    padding:        12px;
+    width:          100%;
 }
 
 div.exec_test_spec {
-	background: 	#FFC;
-	color: 			black;
-	padding: 		12px;
+    background:     #FFC;
+    color:          black;
+    padding:        12px;
 }
 
 
 div.login_title {
-	text-align: 	center;
-	width: 			80%;
-	background: 	#f0f0f0;
-	margin: 		0px;
-	padding: 		5px 0px;
-	font-weight : 	bold;
-	letter-spacing: 2px;
+    text-align:     center;
+    width:          80%;
+    background:     #CDE;
+    margin:         0px;
+    padding:        5px 0px;
+    font-weight :   bold;
+    letter-spacing: 2px;
 }
 
 div.login_form {
-	text-align: 	left;
-	width: 			30%;
-	margin: 		35%;
-	margin-top: 	60px;
-	background: 	#f0f0f0;  /* CDE */
-	padding: 		30px;
-	border: 		1px;
+    text-align:     left;
+    width:          30%;
+    margin:         35%;
+    margin-top:     60px;
+    background:     #CDE;  /* CDE */
+    padding:        30px;
+    border:         1px;
     border-style:solid;
-    border-color:#f0f0f0;
+    border-color:#CDE;
     border-radius: 15px;
 }
 
 div.login_form.large {
-	border-color:#FFF;
-	font-size: large;
+    border-color:#FFF;
+    font-size: large;
 }
 
 
 div.login_form.medium {
     border: 4px;
     border-style:solid;
-	border-color:#FFF;
-	font-size: medium;
-}
-/*
-div.login_form.medium {
-    border-style:solid;
-	border-color:#FFF;
-	font-size: medium;
-}
-*/
-
-
-.big_button{
-	width: 80px; height : 30px;
+    border-color:#FFF;
+    font-size: medium;
 }
 
+.big_button {
+    width: 80px; height : 30px;
+}
 
 .custom_field_container {
   border: thin solid white;
   padding: 5px;
 }
 
-.option_transfer_container {
-	padding: 5px 15px 15px 15px;
-	background-color: #f0f0f0;
-	border: 1px solid #e3e3e3;
+.option_transfer_container td {
+    vertical-align: middle;
 }
 
-.clickable_icon
-{
-  padding: 			2px;
-  width: 			5px;
-  text-align: 		center;
-  vertical-align: 	middle;
+.clickable_icon {
+  padding:          2px;
+  width:            5px;
+  text-align:       center;
+  vertical-align:   middle;
 }
 
-.icon_cell
-{
-  width: 			5px;
-  text-align: 		center;
-  vertical-align: 	middle;
+.icon_cell {
+  width:            5px;
+  text-align:       center;
+  vertical-align:   middle;
 }
 
-/* havlatm: @TODO title must be header markup */
 .exec_tc_title {
-	background:		#2980b9;
-	color:			white;
-	margin-bottom:	4px;
-	padding: 		3px;
-	text-align: 	left;
+    background:     #059;
+    color:          white;
+    margin-bottom:  4px;
+    padding:        3px;
+    text-align:     left;
 }
 
+.exec_tc_title_alert {
+    background:     #B22222;
+    color:          white;
+    margin-bottom:  4px;
+    padding:        3px;
+    text-align:     left;
+    border-radius: 10px;
+}
+
+.exec_additional_info {
+    color: black;
+    margin: 10px;
+}
 .x-panel .exec_additional_info {
     margin: 0;
 }
-
 .x-panel-body-noheader {
     border: none !important;
 }
 
 .exec_testsuite_details {
-  border: 			thin solid black;
-  padding: 			5px;
+  border: thin solid black;
+  padding: 5px;
 }
 
-.exec_tcstep_note
-{
+.exec_tcstep_note {
   padding:2px;
   width:5px;
 }
@@ -1369,7 +1435,7 @@ table.mainTable-x th {
   color:#15428b;
   font:bold 11px tahoma,arial,verdana,sans-serif;
   padding:5px 3px 4px 5px;
-  border: 1px solid #e3e3e3;
+  border:1px solid #99bbe8;
   line-height:15px;
   background:transparent url(../images/white-top-bottom.gif) repeat-x 0 -1px;
 }
@@ -1380,18 +1446,17 @@ th.testlink, td.testlink, tr.testlink td {
   margin: 1px;
 }
 
-.clickable { cursor:pointer; }
-img.clickable { margin-left: 3px; margin-right: 3px; }
-
+.clickable
+{
+    cursor:pointer;
+}
 
 /*
 @since 1.9.6
 @internal notice:
 !important is CRITIC because without it, the alternate row color of ext-js grid will take precedence
-
 @internal revisions
 20121230 - franciscom - used on ext-js table implementation of users view
-
 */
 .roleCode9
 {
@@ -1454,54 +1519,35 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 }
 
 
-
 /** Fix for buttons in date picker */
 .x-date-mp-btns button {
     background: inherit;
 }
 
 .x-date-middle button {
-	background: transparent;
+    background: transparent;
 }
 
 .x-date-picker table th,
 .x-date-picker table td {
-    	border: inherit;
-    	padding: inherit;
-	vertical-align: center;
+    border: inherit;
+    padding: inherit;
+    vertical-align: center;
 }
 
-/* *********************************************************************************** */
+/* ************************************************************************** */
 /* Taken from Ext JS, and adapted */
 
-.x-tl-panel{
-    border-style:solid;
-    border-color:#e3e3e3;
-    border-width:0;
-    margin-bottom: 15px;
-}
-
-.x-tl-panel-header {overflow:hidden;color:#555;font:bold 12px tahoma,arial,verdana,sans-serif;
-                   padding:4px 10px;border:1px solid #e3e3e3;line-height: 22px;
-                   background-color: #f0f0f0;}
-.x-tl-panel-body {
-    line-height: 0px;
-    border: 1px solid #e3e3e3;
-    border-top:0 none;
-    overflow:hidden;
-    background:white !important;
-    padding: 0 !important;
-}
-.x-tl-panel-bbar {
-    border: 1px solid #e3e3e3;
-    border-top: 0 none;
-    overflow: hidden;
-    padding: 2px;
-}
-.x-tl-panel-tbar {border:1px solid #e3e3e3;border-top:0 none;overflow:hidden;padding:2px;}
-.x-tl-panel-tbar-noheader .x-toolbar,.x-tl-panel-mc .x-tl-panel-tbar .x-toolbar{border-top:1px solid #e3e3e3;
+.x-tl-panel{border-style:solid;border-color:#99bbe8;border-width:0;}
+.x-tl-panel-header{overflow:hidden;color:#15428b;font:bold 11px tahoma,arial,verdana,sans-serif;
+                   padding:2px 1px 1px 2px;border:1px solid #99bbe8;line-height:15px;
+                   background:transparent url(../images/white-top-bottom.gif) repeat-x 0 -1px;}
+.x-tl-panel-body{border:1px solid #99bbe8;border-top:0 none;overflow:hidden;background:white;}
+.x-tl-panel-bbar {border:1px solid #99bbe8;border-top:0 none;overflow:hidden;padding:2px;}
+.x-tl-panel-tbar {border:1px solid #99bbe8;border-top:0 none;overflow:hidden;padding:2px;}
+.x-tl-panel-tbar-noheader .x-toolbar,.x-tl-panel-mc .x-tl-panel-tbar .x-toolbar{border-top:1px solid #99bbe8;
                                                                           border-bottom:0 none;}
-.x-tl-panel-body-noheader,.x-tl-panel-mc .x-tl-panel-body{border-top:1px solid #e3e3e3;}
+.x-tl-panel-body-noheader,.x-tl-panel-mc .x-tl-panel-body{border-top:1px solid #99bbe8;}
 .x-tl-panel-header{overflow:hidden;}
 .x-tl-panel-tl .x-tl-panel-header{color:#15428b;font:bold 11px tahoma,arial,verdana,sans-serif;
                                padding:5px 0 4px 0;border:0 none;background:transparent;}
@@ -1511,7 +1557,7 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
                         vertical-align:middle;margin-right:4px;margin-top:-1px;margin-bottom:-1px;}
 .x-tl-panel-tc{background:transparent url(../images/top-bottom.gif) repeat-x 0 0;overflow:hidden;}
 .x-tl-panel-tl{background:transparent url(../images/corners-sprite.gif) no-repeat 0 0;
-               padding-left:6px;border-bottom:1px solid #e3e3e3;}
+               padding-left:6px;border-bottom:1px solid #99bbe8;}
 .x-tl-panel-tr{background:transparent url(../images/corners-sprite.gif) no-repeat right 0;
                padding-right:6px;}
 .x-tl-panel-bc{background:transparent url(../images/top-bottom.gif) repeat-x 0 bottom;}
@@ -1527,54 +1573,64 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
                padding-right:6px;}
 .x-tl-panel-bc .x-tl-panel-footer{padding-bottom:6px;}
 .x-tl-panel-nofooter .x-tl-panel-bc{height:6px;font-size:0;line-height:0;}
-.x-tl-panel-bwrap {overflow:hidden;}
-.x-tl-panel-body {overflow:hidden;}
-.x-tl-panel-body a {
-	display: block;
-}
+.x-tl-panel-bwrap{overflow:hidden;}
+.x-tl-panel-body{overflow:hidden;}
 .x-tl-panel-collapsed .x-resizable-handle{display:none;}
 .tbar-sort-desc {background-image: url("../images/sort_desc.gif") !important;
                 background-position: 4px 7px !important;}
 .tbar-sort-asc{background-image: url("../images/sort_asc.gif") !important;
                background-position: 4px 7px !important;}
 .tbar-default-state {
-	background-image: url("../images/edit-undo.png") !important;
+    background-image: url("../images/edit-undo.png") !important;
 }
 .tbar-info{
-	background-image: url("../images/question16_16.gif") !important;
+    background-image: url("../images/question16_16.gif") !important;
 }
 .tbar-reset-filters{
-	background-image: url("../images/reset_filter.png") !important;
+    background-image: url("../images/reset_filter.png") !important;
 }
 .x-progress-wrap.left-align .x-progress-text {
     text-align:left;
 }
-.tools_bar_bottom { margin-top: 10px; }
-.tools_bar_bottom button,
-.tools_bar_bottom input[type="button"],
-.tools_bar_bottom input[type="submit"] { margin-right: 10px; }
 
-/* *********************************************************************************** */
-/* Override Bootstrap */
+/* From ACE */
+.page-content {
+    position: relative;
+    padding: 0;
+    margin-bottom: 20px;
+}
+body>.page-content {
+    padding: 20px;
+}
 
-.nav { font-size: 12px !important; line-height: 22px;}
-.nav > li > a { padding: 5px 10px !important; }
-
-.chosen-container {
-    display: block !important;
+p.text-border {
+    border: 1px solid black;
+    background: white;
+    padding : 10px;
+}
+div.form-border {
+    border: 1px solid black;
+    background: white;
+    padding : 10px;
+}
+.yellow {
+    color : yellow;
+}
+#footer {
+    width: 100%;
+    border-top : 3px double #e3e3e3;
+    position: absolute;
+    bottom: 0;
+    padding-top: 5px;
+    font-style: normal;
 }
 
 /* ************************************************************************** */
 /* refactored */
 
-.x-panel, .x-panel-body.exec_additional_info {
-    margin: 15px;
+.x-panel {
+    margin: 10px;
 }
-
-.x-panel-bwrap .x-panel-body.exec_additional_info {
-    margin: 0;
-}
-
 #tl_users_list.x-panel {
     margin: 0;
 }
@@ -1591,18 +1647,11 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
     margin: 4px 0 4px 4px;
 }
 
-.x-panel-bwrap {
-    position: relative;
-}
-
 .x-panel-body {
-    box-sizing: border-box;
     padding: 10px !important;
     border-color: #e3e3e3 !important;
 }
-.x-panel-body table {
-    margin: 0 !important;
-}
+
 .chosen-container {
     width: 100% !important;
 }
@@ -1672,5 +1721,3 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 .nav-pills>li.active>a:hover {
     background-color: #2980b9 !important;
 }
-
-/* ----- END ------------------------------------------------------------------------- */
