@@ -147,37 +147,92 @@ output {
     color: #555555;
 }
 
+
 /* ***** GLOBAL HTML ***************************************************************** */
+html, body {
+    height: 100%;
+    line-height: 20px;
+    width: 100%;
+    margin: 0px;
+}
+
 body, body.testlink {
-    background: #fff;
+    background-color: white !important;
     font-family: 'Trebuchet MS', Arial, Verdana, sans-serif;
     font-size: 13px;
     margin: 0px;
-    padding: 0px;
+    height:100%;
     color: #555;
 }
-body:before, body:after, .clearfix {
-    content: " ";
-    display: table;
-    clear: both;
+
+body.testlink, h1.title {
+    margin-top: 20px;
 }
 
-body.landing {
-    background:     #16a085; /* 059 */
-    font-family:    'Trebuchet MS', Arial, Verdana, sans-serif;
-    font-size:      small;
-    margin:         0px;
-    padding:        0px;
+iframe {
+    position: relative;
+    border: none;
 }
-.border-box, table {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+iframe.sideBarFrame {
+    width:100%;
+    height:calc(100% - 57px);
 }
-.labelHolder {
-    line-height: 22px;
-    padding: 5px 0;
+iframe.contentFrame-small {
+    border: none;
+    height:calc(100% - 5px);
+    width: calc(100% - 150px);
+    padding-left: 2px;
 }
+iframe.contentFrame-large {
+    border: none;
+    height:calc(100% - 5px);
+    width: calc(100% - 50px);
+    padding-left: 2px;
+}
+iframe.treeframe {
+    width:calc(99% - 70%);
+    height:calc(100% - 35px);
+    float:left;
+}
+iframe.workframe {
+    width:calc(100% - 29%);
+    height:calc(100% - 35px);
+}
+.sidebar.compact.sidebar-large {
+    width:150px !important;
+}
+.sidebar.compact.sidebar-small {
+    width:50px !important;
+}
+span.menu-text-shown {
+    display:block;
+}
+span.menu-text-hidden {
+    display:none;
+}
+div.white-space {
+    height:20px;
+    background-color:whitesmoke;
+}
+
+ul.nav.nav-tabs.padding-18 {
+    padding-top: 5px;
+}
+.x-tree-node {
+    font-size:13px!important;
+}
+
+ul.nav.nav-pills {
+    line-height: 30px !important;
+}
+.nav>li>a {
+    font-size: 13px !important;
+    padding: 0 15px !important;
+}
+.nav-pills>li>a {
+    border-radius: 3px;
+}
+
 /**
 use together with #header-wrap, to create a section on top of body
 that remain always visible while rest of body content scrolls,
@@ -188,12 +243,7 @@ body.fixedheader {
     padding-top:    0; /* IE 6 does not understand fixed */
 }
 
-img {
-    border:  none;
-}
-
-pre
-{
+pre {
     font-family :   Arial, Helvetica, sans-serif;
 }
 
@@ -202,27 +252,20 @@ span, div {
     padding:        0px;
 }
 
-/* h1.title - To avoid problems with ext js css */
-/* 20080529 - franciscom - font-size reduced */
 h1, h1.title {
-    border-left: 5px solid #16a085;
-    margin: 15px;
-    padding: 0 15px;
+    padding-left: 15px;
+    line-height: 30px;
     text-align: left;
+    font-size: 16px;
     font-weight: bold;
-    line-height: 22px;
+    border-left: 7px solid #888;
 }
-
 
 h2 {
-    font-size: 110%;
-    font-weight: bold;
-    line-height: 22px
+    font-size:      110%;
+    font-weight:    bold;
 }
-h2 img {
-    height: 16px;
-    margin: 3px 0;
-}
+
 h3, h3.testlink {
     font-size:      105%;
     margin-bottom:  2px;
@@ -234,7 +277,6 @@ form {
     padding:        0px;
 }
 
-/* 20100225 - eloff - BUGID 3217 - Ext removes bullets from all lists, re-add bullets to our lists */
 .workBack ol {
     margin: 1em 40px;
     list-style-type: decimal;
@@ -244,29 +286,23 @@ form {
     list-style-type: disc;
     list-style-position: outside;
 }
-.workBack .x-panel {
-    margin-left: 0;
-    margin-right: 0;
-}
-.workBack p { line-height: 16px; }
-.workBack h1.title {
-    margin-left: 0; margin-right: 0;
-    background-color: #16a085;
+
+.panel {
+    background-color: #fff !important;
+    border-color: #f0f0f0 !important;
+    box-shadow: none !important;
 }
 
 /* ***** Links ***** */
-/* A Visited link is still blue */
-a:visited, a:link, a:active {
-    color: #16a085;
+a:not(.btn-primary) {
+    color:          #059;
     text-decoration: none;
 }
+
 /* A link being hovered over is red*/
-a:hover   {
-    color: #16a085;
+a:hover {
+    color:          #900;
     text-decoration: none;
-}
-.direct_link {
-    line-height: 20px;
 }
 
 /* ***** Menu bar specific ******************************************* */
@@ -298,7 +334,7 @@ div.menu_title a img {
 }
 
 a[href="index.php"] {
-    height: 34px;
+    height: 40px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -400,17 +436,15 @@ select.menu_combo {
     font-weight: bold;
 }
 
-
 /* ***** Main page specific ***************************************** */
 
 div.testproject_title {
-    background:     #16a085;
+    background:     #059;
     border:         1px solid black;
     color:          white;
     font-size:      110%;
     padding:        2px;
 }
-
 
 
 /* **** general classes ************************************* */
@@ -419,26 +453,30 @@ div.testproject_title {
 use together with body.fixedheader, to create a section on top of body
 that remain always visible while rest of body content scrolls,
 giving visual experience that body goes under the section on top.
-
 Added z-index to solve issue regaring content generated by EXT-JS library
 present on page (example grid())
-
 On chrome seems not work
 */
 #header-wrap {
-    background:     #eee;
-    border-bottom:  1px solid #000;
     height: 100px;
     position: fixed;
-    top:  0;
-    width:  100%;
-    z-index:  999;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 /* background for working area (tables and forms) */
 div.workBack {
     text-align: left;
-    margin: 15px;
+    /*background: #f0f0f0;*/
+    background-color: #fff;
+    border: none;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.workBack form {
+    text-align: center;
 }
 
 /* .label is used to magnify label for active objects */
@@ -464,7 +502,6 @@ span.form_label {
 
 /* for tree menu */
 div.tree {
-    background:     #EEE;
     padding:        3px;
     border:         1px solid #808080;
     margin:         3px;
@@ -472,40 +509,43 @@ div.tree {
 }
 
 div.groupBtn {
-    padding: 0;
-    margin: 15px 0;
+    margin-top: 20px;
+    text-align: left;
 }
 
 div.vertical_menu {
-    margin: 15px !important;
-    padding: 0;
-    width: 230px;
-    line-height: 0;
+    font-size: 14px;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 340px !important;
 }
 
 div.vertical_menu h2 {
     background:     #FFC;
     border-style:   none;
+    color:          black;
     font-weight:    bold;
 }
 
 div.vertical_menu a {
-    font-weight: normal;
-    line-height: 22px;
-    padding: 5px 10px;
-    border-top: 1px dashed #e3e3e3;
-}
-div.vertical_menu a:first-child {
-    border: none;
-}
-div.vertical_menu a:hover {
-    background-color: #f0f0f0;
+    font-weight:    normal;
 }
 
-.vertical_menu .chosen-container {
-    margin: 10px 0 15px 0;
-    border-radius: 0 !important;
+.vertical_menu>div,
+.list-group {
+    padding: 0 !important;
+    margin: 0 20px 20px 20px !important;
 }
+
+.vertical_menu>div {
+    line-height: 30px;
+}
+
+.list-group-item {
+    line-height: 30px;
+    font-size: 14px !important;
+}
+
 div.menu_bubble {
   background: #c8dce8;
   padding: 3px;
@@ -702,18 +742,6 @@ fieldset.groupBtn img {
     float: left;
     margin: 4px;
 }
-.cke_chrome {
-    border: 1px solid #e3e3e3 !important;
-}
-.cke_top {
-    border-bottom: 1px solid #e3e3e3 !important;
-    background: #f0f0f0 !important;
-}
-.cke_bottom {
-    border-top: 1px solid #e3e3e3 !important;
-    background: #f0f0f0 !important;
-    box-shadow: none !important;
-}
 
 /* ***** Help ***************************************************************************
  * This allows link help from text e.g. instruction
@@ -733,15 +761,15 @@ span.help
 #tlhelp {
     position:       absolute;
     z-index:        100;
-    padding:        15px;
+    padding:        5px;
     right:          50px;
     top:            50px;
     width:          500px;
     height:         auto;
-    background:     #f0f0f0;
-    color:          #555;
+    background:     #059;
+    color:          white;
     font-size:      80%;
-    border:         1px solid #e3e3e3;
+    border:         medium solid #808080;
 }
 
 #tlhelp h2 {
@@ -756,14 +784,14 @@ span.help
     margin: 0 0 1em 0.5em;
 }
 
+
 /* ***** Messages ******************************************************* */
 /* show results of SQL actions or important information for user */
 .error, .info, .warning, div.user_feedback {
     font-size:      110%;
     text-align:     center;
     font-weight:    bold;
-    line-height:    22px;
-    padding:        5px;
+    padding:        3px;
 }
 
 .tab-error, .tab-warning, .tab-success{
@@ -781,27 +809,27 @@ span.help
 }
 
 .success, .tab-success {
-    color:          #16a085; /* sea green */
+    color:          #006400; /* darkgreen */
 }
 
 .info, div.user_feedback{
-    color:  #16a085; /* blize hole blue */
+    color:          black;
 }
 
 div.messages {
-    background-color:   #16a085;
+    background-color:   #059;
     color:              white;
     margin:             3px;
     padding:            3px;
 }
 
 div.messages_rounded {
-    background-color:   #16a085;
+    background-color:   #059;
     color:              white;
     margin:             3px;
     padding:            3px;
     border-style:solid;
-    border-color:#16a085;
+    border-color:#059;
     border-radius: 10px;
 }
 
@@ -822,7 +850,7 @@ span.selected, span.unselected {
 }
 
 span.selected {
-    background:     #16a085;
+    background:     #059;
     color:          white;
 }
 
@@ -848,53 +876,53 @@ span.unselected a, span.unselected a:visited {
 */
 
 /* ***** Common ********************* */
-table.common, table {
-    margin-bottom: 20px;
+table.common {
     min-width: 50%;
-    font-size: 12px;
-    background-color: #fff;
 }
 
-table th,
-table.common th,
-table.simple th,
-table.simple_tableruler th {
+table th {
     overflow: hidden;
-    color: #555;
     font-weight: bold;
-    font-size: 12px;
-    padding: 8px 5px;
-    background-color: #f0f0f0;
-    min-width: 70px;
-}
-table.common th { padding: 13px 5px; line-height: 16px; }
-
-table tr.odd { background-color: #fff; }
-table tr.even { background-color: #f0f0f0; }
-
-table tr.splitter {
-    width: 100%; padding: 0;
-    border-top: 1px dashed #e3e3e3;
-}
-table tr.splitter td {
-    padding: 0;
-}
-
-table td,
-table.common td,
-table.simple td,
-table.simple_tableruler td, th {
-    padding: 8px 5px;
     line-height: 16px;
+    padding: 7px 10px;
+    background-color: #f0f0f0;
 }
-table.common th, table.common td {
+
+table td {
+    padding: 5px 10px;
+    line-height: 20px;
+}
+
+table td, th {
     vertical-align: top;
+    text-align: left;
 }
-table.simple td, table.simple_tableruler td, th {
-    vertical-align: middle;
+
+.table>thead>tr>th {
+    vertical-align: middle !important;
 }
-table td { position: relative; font-size: 12px; }
-table td.middle { vertical-align: middle; }
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    line-height: 18px !important;
+    padding: 6px 10px !important;
+}
+
+th img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: left;
+    margin-right: 2px;
+}
+
+td p {
+    margin: 0 !important;
+}
 
 /* Margin fix for paragraphs in steps table */
 table.common td p:first-child, table.simple td p:first-child,
@@ -903,53 +931,67 @@ simple_tableruler td p:first-child{
 }
 
 table.common caption, table.smallGrey caption {
-    background: #f0f0f0;
-    border: 1px solid black;
     border-bottom-style: none;
-    font-weight: bold;
+    font-weight:    bold;
 }
 
 
 /* ***** Simple Table (often used to show data) ***************** */
 table.simple, table.simple_tableruler {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 1px solid #e3e3e3;
-    margin: 15px 0;
-    width: 100%;
+    width:          100%;
 }
 
 table.simple caption, table.simple_tableruler caption{
-    background:     #f0f0f0;
+    background:     #CCC;
     border:         thin solid black;
     border-bottom-style: none;
     font-weight:    bold;
 }
 
 table.simple_tableruler tr:hover{
-    background-color: #e3e3e3 !important;
+    background-color: #CDDEF3 !important;
 }
 
-table.tableruler tr:hover{
-    background-color: #fff !important;
+table.tableruler tbody tr:hover{
+    background-color: #FFF !important;
 }
 
 /* Used for filters and options settings */
 table.smallGrey {
     font-size:      smaller;
+    margin-bottom:  10px;
     margin-right:   0px;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+table.smallGrey td {
+    padding: 2px;
+}
+table.smallGrey td input {
+    box-sizing: border-box;
+    width: 100% !important;
+}
+table.smallGrey td input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px;
+    margin: 4px auto;
 }
 
+table.no-border {
+    border:         0px none;
+    font-size:      90%;
+    margin:         5px 0px;
+    width:          auto;
+}
 
 table.invisible {
     border:         0px none;
+    font-size:      90%;
     margin:         5px 0px;
     width:          auto;
 }
 
 table.mainTable{
-    background:     #EEE;
     border:         1px double black;
     min-width:      200px;
 }
@@ -963,44 +1005,42 @@ table.mainTable th {
 }
 
 table.link_and_exec {
-    background:     #EEE;
     border:         1px solid black;
     margin-bottom:  10px;
     margin-right:   0px;
 }
 
 table.link_and_exec th {
-    background:     #e3e3e3;
+    background:     #CCC;
 }
 
 /* *****  Table Execution History ********* */
 table.exec_history {
-    background:     #EEE;
     border:         thin solid black;
+    font-size:      90%;
     margin:         20px;
     width:          95%;
 }
 
 table.exec_history th {
-    background:     #e3e3e3;
+    background:     #CCC;
     border-bottom:  1px solid black;
     padding:        2px;
 }
 
 
 /* >>>> Martin: @TODO REMOVE! do not use tables to structure page <<<<<<< */
-table.notesBox td
-{
+table.notesBox td {
     vertical-align: top;
 }
-td.checkbox_cell{
+td.checkbox_cell {
     width:          1px;
 }
-td.tcase_id_cell{
+td.tcase_id_cell {
     width:          25px;
 }
 table.srs_view td {
-    border:         1px solid black;
+    border:         1px solid #e3e3e3;
 }
 
 table.test_exec {
@@ -1010,33 +1050,58 @@ table.test_exec {
     width:          100%;
 }
 
-.dataTables_length, .dataTables_filter {
-    margin-bottom: 5px;
-}
-.dataTables_info, .dataTables_paginate,
-.dataTables_length, .dataTables_filter {
-    line-height: 22px;
-}
-.dataTables_paginate .paginate_button {
-    padding-top: 0  !important;
-    padding-bottom: 0 !important;
+/* To adjust Bootstrap tables */
+.table {
+  font-size: 12px;
+  width: 100%;
 }
 
-.attachment_uploader {
-    text-align: left;
-    background: #f0f0f0;
-    color: #555;
-    padding: 3px 5px;
-    margin: 15px 0;
-    font-size: 12px;
-    border: 1px solid #e3e3e3;
-    line-height: 24px;
+.table .thead-dark th,
+.table .thead-light th {
+  color: #555;
+  background-color: #f0f0f0;
+  border-color: #e3e3e3;
 }
 
-.tl-msg {
-    font-size: 12px;
-    color: #a2a2a2;
+.table-bordered,
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    border: 1px solid #e3e3e3 !important;
+    border-top: none;
 }
+
+table.x-btn,
+.x-btn-small,
+.x-btn-ml,
+.x-btn-mc,
+.x-btn-mr,
+table.x-btn button {
+    height: 24px !important;
+    line-height: 24px !important;
+}
+
+table.x-btn button {
+    border: none !important;
+    padding-left: 20px !important;
+}
+
+.x-btn {
+    margin: 0 10px;
+}
+
+.x-grid3-hd-row td {
+    border: none !important;
+}
+
+.x-grid3-header-offset table {
+    width: 100% !important;
+}
+
+.x-toolbar-cell { padding: 0 !important; }
 
 /* ***** Execution & Results ********************************************************* */
 div.passed, div.failed, div.blocked, div.not_run {
@@ -1062,6 +1127,14 @@ div.not_run {
     background:     black;
 }
 
+div.backup_exist {
+    color:          black;
+    margin:         8px;
+    padding:        6px;
+    text-align:     center;
+    background:     #EEE;
+}
+
 
 /* ***** execution tree coloring ************************* */
 span.light_passed, span.light_failed, span.light_blocked,
@@ -1085,7 +1158,7 @@ span.light_blocked {
 }
 
 span.light_not_run {
-    background:         #f0f0f0; /* grey */
+    background:         #E8E8E8; /* grey */
 }
 
 span.light_not_available {
@@ -1096,7 +1169,7 @@ span.light_unknown {
     background:         #DDFFFF; /* cyan; */
 }
 
-/* ***** render test result status (coloring background) ************************* */
+/* ***** render test result status (coloring background) ******************** */
 .passed {
     color:          white;
     background:     #006400; /* darkgreen */
@@ -1127,7 +1200,7 @@ span.light_unknown {
     background:     #00FFFF; /* cyan; */
 }
 
-/* ***** render test result status (coloring text) ************************* */
+/* ***** render test result status (coloring text) ************************** */
 .passed_text {
     color:    #006400; /* darkgreen */
   font-weight: bold;
@@ -1159,7 +1232,7 @@ span.light_unknown {
 }
 
 
-/* ***** MISC ************************************************************************ */
+/* ***** MISC *************************************************************** */
 /* Please, be carefull to be consistent if you add a new definition */
 
 /* execution boxes (result, test scenario, notes) */
@@ -1186,9 +1259,10 @@ div.exec_history {
 }
 
 span.type1 {
-    background:     #16a085;
+    background:     #059;
     border:         1px solid black;
     color:          white;
+    font-size:      110%;
     margin-bottom:  4px;
     padding:        2px;
     text-align:     left;
@@ -1198,7 +1272,7 @@ span.type1 {
 div.fullpage_head {
     text-align:     center;
     width:          100%;
-    background:     #f0f0f0;
+    background:     #CDE;
     margin:         0px;
     padding:        5px 0px;
     font-weight :   bold;
@@ -1211,7 +1285,7 @@ div.forms {
     text-align:     left;
     margin:         20%;
     margin-top:     20px;
-    background:     #f0f0f0;
+    background:     #CDE;
     padding:        25px;
     border:         1px;
 }
@@ -1259,7 +1333,7 @@ div.exec_test_spec {
 div.login_title {
     text-align:     center;
     width:          80%;
-    background:     #f0f0f0;
+    background:     #CDE;
     margin:         0px;
     padding:        5px 0px;
     font-weight :   bold;
@@ -1271,11 +1345,11 @@ div.login_form {
     width:          30%;
     margin:         35%;
     margin-top:     60px;
-    background:     #f0f0f0;  /* CDE */
+    background:     #CDE;  /* CDE */
     padding:        30px;
     border:         1px;
     border-style:solid;
-    border-color:#f0f0f0;
+    border-color:#CDE;
     border-radius: 15px;
 }
 
@@ -1291,70 +1365,67 @@ div.login_form.medium {
     border-color:#FFF;
     font-size: medium;
 }
-/*
-div.login_form.medium {
-    border-style:solid;
-    border-color:#FFF;
-    font-size: medium;
-}
-*/
 
-
-.big_button{
+.big_button {
     width: 80px; height : 30px;
 }
-
 
 .custom_field_container {
   border: thin solid white;
   padding: 5px;
 }
 
-.option_transfer_container {
-    padding: 5px 15px 15px 15px;
-    background-color: #f0f0f0;
-    border: 1px solid #e3e3e3;
+.option_transfer_container td {
+    vertical-align: middle;
 }
 
-.clickable_icon
-{
+.clickable_icon {
   padding:          2px;
   width:            5px;
   text-align:       center;
   vertical-align:   middle;
 }
 
-.icon_cell
-{
+.icon_cell {
   width:            5px;
   text-align:       center;
   vertical-align:   middle;
 }
 
-/* havlatm: @TODO title must be header markup */
 .exec_tc_title {
-    background:     #16a085;
+    background:     #059;
     color:          white;
     margin-bottom:  4px;
     padding:        3px;
     text-align:     left;
 }
 
+.exec_tc_title_alert {
+    background:     #B22222;
+    color:          white;
+    margin-bottom:  4px;
+    padding:        3px;
+    text-align:     left;
+    border-radius: 10px;
+}
+
+.exec_additional_info {
+    color: black;
+    margin: 10px;
+}
 .x-panel .exec_additional_info {
     margin: 0;
 }
-
 .x-panel-body-noheader {
     border: none !important;
 }
 
 .exec_testsuite_details {
-  border:           thin solid black;
-  padding:          5px;
+  border: thin solid black;
+  padding: 5px;
 }
 
-.exec_tcstep_note
-{
+.exec_tcstep_note {
   padding:2px;
   width:5px;
 }
@@ -1373,7 +1444,7 @@ table.mainTable-x th {
   color:#15428b;
   font:bold 11px tahoma,arial,verdana,sans-serif;
   padding:5px 3px 4px 5px;
-  border: 1px solid #e3e3e3;
+  border:1px solid #99bbe8;
   line-height:15px;
   background:transparent url(../images/white-top-bottom.gif) repeat-x 0 -1px;
 }
@@ -1384,18 +1455,17 @@ th.testlink, td.testlink, tr.testlink td {
   margin: 1px;
 }
 
-.clickable { cursor:pointer; }
-img.clickable { margin-left: 3px; margin-right: 3px; }
-
+.clickable
+{
+    cursor:pointer;
+}
 
 /*
 @since 1.9.6
 @internal notice:
 !important is CRITIC because without it, the alternate row color of ext-js grid will take precedence
-
 @internal revisions
 20121230 - franciscom - used on ext-js table implementation of users view
-
 */
 .roleCode9
 {
@@ -1458,7 +1528,6 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 }
 
 
-
 /** Fix for buttons in date picker */
 .x-date-mp-btns button {
     background: inherit;
@@ -1470,48 +1539,24 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 
 .x-date-picker table th,
 .x-date-picker table td {
-        border: inherit;
-        padding: inherit;
+    border: inherit;
+    padding: inherit;
     vertical-align: center;
 }
 
-/* *********************************************************************************** */
+/* ************************************************************************** */
 /* Taken from Ext JS, and adapted */
 
-.x-tl-panel{
-    border-style:solid;
-    border-color:#e3e3e3;
-    border-width:0;
-    margin-bottom: 15px;
-}
-
-.x-tl-panel-header {
-    overflow:hidden;
-    color:#555;
-    font:bold 12px tahoma,arial,verdana,sans-serif;
-    padding:4px 10px;
-    border:1px solid #e3e3e3;
-    line-height: 22px;
-    background-color: #f0f0f0;
-}
-.x-tl-panel-body {
-    line-height: 0px;
-    border: 1px solid #e3e3e3;
-    border-top:0 none;
-    overflow:hidden;
-    background:white !important;
-    padding: 0 !important;
-}
-.x-tl-panel-bbar {
-    border: 1px solid #e3e3e3;
-    border-top: 0 none;
-    overflow: hidden;
-    padding: 2px;
-}
-.x-tl-panel-tbar {border:1px solid #e3e3e3;border-top:0 none;overflow:hidden;padding:2px;}
-.x-tl-panel-tbar-noheader .x-toolbar,.x-tl-panel-mc .x-tl-panel-tbar .x-toolbar{border-top:1px solid #e3e3e3;
+.x-tl-panel{border-style:solid;border-color:#99bbe8;border-width:0;}
+.x-tl-panel-header{overflow:hidden;color:#15428b;font:bold 11px tahoma,arial,verdana,sans-serif;
+                   padding:2px 1px 1px 2px;border:1px solid #99bbe8;line-height:15px;
+                   background:transparent url(../images/white-top-bottom.gif) repeat-x 0 -1px;}
+.x-tl-panel-body{border:1px solid #99bbe8;border-top:0 none;overflow:hidden;background:white;}
+.x-tl-panel-bbar {border:1px solid #99bbe8;border-top:0 none;overflow:hidden;padding:2px;}
+.x-tl-panel-tbar {border:1px solid #99bbe8;border-top:0 none;overflow:hidden;padding:2px;}
+.x-tl-panel-tbar-noheader .x-toolbar,.x-tl-panel-mc .x-tl-panel-tbar .x-toolbar{border-top:1px solid #99bbe8;
                                                                           border-bottom:0 none;}
-.x-tl-panel-body-noheader,.x-tl-panel-mc .x-tl-panel-body{border-top:1px solid #e3e3e3;}
+.x-tl-panel-body-noheader,.x-tl-panel-mc .x-tl-panel-body{border-top:1px solid #99bbe8;}
 .x-tl-panel-header{overflow:hidden;}
 .x-tl-panel-tl .x-tl-panel-header{color:#15428b;font:bold 11px tahoma,arial,verdana,sans-serif;
                                padding:5px 0 4px 0;border:0 none;background:transparent;}
@@ -1521,7 +1566,7 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
                         vertical-align:middle;margin-right:4px;margin-top:-1px;margin-bottom:-1px;}
 .x-tl-panel-tc{background:transparent url(../images/top-bottom.gif) repeat-x 0 0;overflow:hidden;}
 .x-tl-panel-tl{background:transparent url(../images/corners-sprite.gif) no-repeat 0 0;
-               padding-left:6px;border-bottom:1px solid #e3e3e3;}
+               padding-left:6px;border-bottom:1px solid #99bbe8;}
 .x-tl-panel-tr{background:transparent url(../images/corners-sprite.gif) no-repeat right 0;
                padding-right:6px;}
 .x-tl-panel-bc{background:transparent url(../images/top-bottom.gif) repeat-x 0 bottom;}
@@ -1537,11 +1582,8 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
                padding-right:6px;}
 .x-tl-panel-bc .x-tl-panel-footer{padding-bottom:6px;}
 .x-tl-panel-nofooter .x-tl-panel-bc{height:6px;font-size:0;line-height:0;}
-.x-tl-panel-bwrap {overflow:hidden;}
-.x-tl-panel-body {overflow:hidden;}
-.x-tl-panel-body a {
-    display: block;
-}
+.x-tl-panel-bwrap{overflow:hidden;}
+.x-tl-panel-body{overflow:hidden;}
 .x-tl-panel-collapsed .x-resizable-handle{display:none;}
 .tbar-sort-desc {background-image: url("../images/sort_desc.gif") !important;
                 background-position: 4px 7px !important;}
@@ -1559,32 +1601,45 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 .x-progress-wrap.left-align .x-progress-text {
     text-align:left;
 }
-.tools_bar_bottom { margin-top: 10px; }
-.tools_bar_bottom button,
-.tools_bar_bottom input[type="button"],
-.tools_bar_bottom input[type="submit"] { margin-right: 10px; }
 
-/* *********************************************************************************** */
-/* Override Bootstrap */
+/* From ACE */
+.page-content {
+    position: relative;
+    padding: 0;
+    margin-bottom: 20px;
+}
+body>.page-content {
+    padding: 20px;
+}
 
-.nav { font-size: 12px !important; line-height: 22px;}
-.nav > li > a { padding: 5px 10px !important; }
-
-.chosen-container {
-    display: block !important;
+p.text-border {
+    border: 1px solid black;
+    background: white;
+    padding : 10px;
+}
+div.form-border {
+    border: 1px solid black;
+    background: white;
+    padding : 10px;
+}
+.yellow {
+    color : yellow;
+}
+#footer {
+    width: 100%;
+    border-top : 3px double #e3e3e3;
+    position: absolute;
+    bottom: 0;
+    padding-top: 5px;
+    font-style: normal;
 }
 
 /* ************************************************************************** */
 /* refactored */
 
-.x-panel, .x-panel-body.exec_additional_info {
-    margin: 15px;
+.x-panel {
+    margin: 10px;
 }
-
-.x-panel-bwrap .x-panel-body.exec_additional_info {
-    margin: 0;
-}
-
 #tl_users_list.x-panel {
     margin: 0;
 }
@@ -1601,18 +1656,11 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
     margin: 4px 0 4px 4px;
 }
 
-.x-panel-bwrap {
-    position: relative;
-}
-
 .x-panel-body {
-    box-sizing: border-box;
     padding: 10px !important;
     border-color: #e3e3e3 !important;
 }
-.x-panel-body table {
-    margin: 0 !important;
-}
+
 .chosen-container {
     width: 100% !important;
 }
@@ -1682,5 +1730,3 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 .nav-pills>li.active>a:hover {
     background-color: #16a085 !important;
 }
-
-/* ----- END ------------------------------------------------------------------------- */

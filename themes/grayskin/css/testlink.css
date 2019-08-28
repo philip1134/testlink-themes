@@ -161,10 +161,14 @@ body, body.testlink {
     font-family: 'Trebuchet MS', Arial, Verdana, sans-serif;
     font-size: 13px;
     margin: 0px;
-    padding: 0px;
     height:100%;
     color: #555;
 }
+
+body.testlink, h1.title {
+    margin-top: 20px;
+}
+
 iframe {
     position: relative;
     border: none;
@@ -877,6 +881,7 @@ table th {
     font-weight: bold;
     line-height: 16px;
     padding: 7px 10px;
+    background-color: #f0f0f0;
 }
 
 table td {
