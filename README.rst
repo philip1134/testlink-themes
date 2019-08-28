@@ -6,7 +6,7 @@ testlink supports customized themes, we built this project to provide themes
 to make testlink display in different style.
 
 this branch supports
-`TestLink 1.9.16 Moka Pot <https://github.com/TestLinkOpenSourceTRMS/testlink-code/tree/1.9.16>`__.
+`TestLink 1.9.17 Alan Turing <https://github.com/TestLinkOpenSourceTRMS/testlink-code/tree/1.9.17>`__.
 
 Usage
 -----
