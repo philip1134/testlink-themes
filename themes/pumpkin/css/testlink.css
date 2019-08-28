@@ -249,7 +249,7 @@ h1, h1.title {
 	padding-left: 15px;
     line-height: 30px;
 	text-align: left;
-	font-size: 16px;
+	font-size: 16px !important;;
 	font-weight: bold;
     border-left: 7px solid #d35400;
 }
