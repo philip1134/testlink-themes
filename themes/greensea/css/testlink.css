@@ -93,8 +93,8 @@ input[type="submit"] {
 .btn-primary,
 input[type="submit"] {
     color: #fff;
-    background-color: #2980b9 !important;
-    border-color: #2980b9 !important;
+    background-color: #16a085 !important;
+    border-color: #16a085 !important;
 }
 
 button[disabled],
@@ -163,7 +163,7 @@ body:before, body:after, .clearfix {
 }
 
 body.landing {
-    background:     #2980b9; /* 059 */
+    background:     #16a085; /* 059 */
     font-family:    'Trebuchet MS', Arial, Verdana, sans-serif;
     font-size:      small;
     margin:         0px;
@@ -205,7 +205,7 @@ span, div {
 /* h1.title - To avoid problems with ext js css */
 /* 20080529 - franciscom - font-size reduced */
 h1, h1.title {
-    border-left: 5px solid #2980b9;
+    border-left: 5px solid #16a085;
     margin: 15px;
     padding: 0 15px;
     text-align: left;
@@ -251,18 +251,18 @@ form {
 .workBack p { line-height: 16px; }
 .workBack h1.title {
     margin-left: 0; margin-right: 0;
-    background-color: #2980b9;
+    background-color: #16a085;
 }
 
 /* ***** Links ***** */
 /* A Visited link is still blue */
 a:visited, a:link, a:active {
-    color: #2980b9;
+    color: #16a085;
     text-decoration: none;
 }
 /* A link being hovered over is red*/
 a:hover   {
-    color: #2980b9;
+    color: #16a085;
     text-decoration: none;
 }
 .direct_link {
@@ -311,7 +311,8 @@ div.menu_bar {
     padding: 0 20px 0 135px;
     line-height: 30px;
     margin: 0 !important;
-    background-color: #f0f0f0;
+    color: #fff;
+    background-color: #16a085;
 }
 
 div.menu_bar a {
@@ -319,7 +320,7 @@ div.menu_bar a {
     line-height: 16px;
     display: block;
     float: left;
-    margin: 7px 10px 7px 7px;
+    margin: 2px 10px 2px 7px;
 }
 
 div.menu_bar a img,
@@ -327,6 +328,9 @@ div.menu_bar .clickable {
     display: block;
     width: 16px;
     height: 16px;
+    padding: 5px;
+    border-radius: 13px;
+    background-color: #fff;
 }
 
 div.menu_bar input,
@@ -362,7 +366,7 @@ div.menu_bar form select {
 div.menu_bar .clickable {
     top: 0 !important;
     float: left;
-    margin: 7px;
+    margin: 2px 7px;
 }
 
 form .menu_bar {
@@ -400,7 +404,7 @@ select.menu_combo {
 /* ***** Main page specific ***************************************** */
 
 div.testproject_title {
-    background:     #2980b9;
+    background:     #16a085;
     border:         1px solid black;
     color:          white;
     font-size:      110%;
@@ -639,8 +643,8 @@ button:hover {
 
 .btn-primary:hover,
 input[type="submit"]:hover {
-    background-color: #2f91ce;
-    border-color: #2f91ce;
+    background-color: #16ad8f;
+    border-color: #16ad8f;
 }
 
 input[type="reset"]:active,
@@ -781,23 +785,23 @@ span.help
 }
 
 .info, div.user_feedback{
-    color:  #2980b9; /* blize hole blue */
+    color:  #16a085; /* blize hole blue */
 }
 
 div.messages {
-    background-color:   #2980b9;
+    background-color:   #16a085;
     color:              white;
     margin:             3px;
     padding:            3px;
 }
 
 div.messages_rounded {
-    background-color:   #2980b9;
+    background-color:   #16a085;
     color:              white;
     margin:             3px;
     padding:            3px;
     border-style:solid;
-    border-color:#2980b9;
+    border-color:#16a085;
     border-radius: 10px;
 }
 
@@ -818,7 +822,7 @@ span.selected, span.unselected {
 }
 
 span.selected {
-    background:     #2980b9;
+    background:     #16a085;
     color:          white;
 }
 
@@ -1182,7 +1186,7 @@ div.exec_history {
 }
 
 span.type1 {
-    background:     #2980b9;
+    background:     #16a085;
     border:         1px solid black;
     color:          white;
     margin-bottom:  4px;
@@ -1329,7 +1333,7 @@ div.login_form.medium {
 
 /* havlatm: @TODO title must be header markup */
 .exec_tc_title {
-    background:     #2980b9;
+    background:     #16a085;
     color:          white;
     margin-bottom:  4px;
     padding:        3px;
@@ -1481,9 +1485,15 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
     margin-bottom: 15px;
 }
 
-.x-tl-panel-header {overflow:hidden;color:#555;font:bold 12px tahoma,arial,verdana,sans-serif;
-                   padding:4px 10px;border:1px solid #e3e3e3;line-height: 22px;
-                   background-color: #f0f0f0;}
+.x-tl-panel-header {
+    overflow:hidden;
+    color:#555;
+    font:bold 12px tahoma,arial,verdana,sans-serif;
+    padding:4px 10px;
+    border:1px solid #e3e3e3;
+    line-height: 22px;
+    background-color: #f0f0f0;
+}
 .x-tl-panel-body {
     line-height: 0px;
     border: 1px solid #e3e3e3;
@@ -1670,7 +1680,7 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-    background-color: #2980b9 !important;
+    background-color: #16a085 !important;
 }
 
 /* ----- END ------------------------------------------------------------------------- */
