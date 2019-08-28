@@ -208,6 +208,7 @@ h1, h1.title {
     border-left: 5px solid #16a085;
     margin: 15px;
     padding: 0 15px;
+    font-size: 16px !important;
     text-align: left;
     font-weight: bold;
     line-height: 22px;
@@ -1680,7 +1681,7 @@ img.clickable { margin-left: 3px; margin-right: 3px; }
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-    background-color: #16a085 !important;
+    background-color: #d35400 !important;
 }
 
 /* ----- END ------------------------------------------------------------------------- */
