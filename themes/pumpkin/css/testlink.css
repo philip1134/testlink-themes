@@ -82,14 +82,14 @@ input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
     padding: 2px 15px;
-    border: 1px solid #e3e3e3 !important;
+    border: 1px solid #e3e3e3;
     color: #555;
     background-color: #f8f8f8;
 }
 
 .btn-primary,
 input[type="submit"] {
-    color: #fff;
+    color: #fff !important;
     background-color: #d35400 !important;
     border-color: #d35400 !important;
 }

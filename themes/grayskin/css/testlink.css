@@ -82,14 +82,14 @@ input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
     padding: 2px 15px;
-    border: 1px solid #e3e3e3 !important;
+    border: 1px solid #e3e3e3;
     color: #555;
     background-color: #f8f8f8;
 }
 
 .btn-primary,
 input[type="submit"] {
-    color: #fff;
+    color: #fff !important;
     background-color: #2980b9 !important;
     border-color: #2980b9 !important;
 }
@@ -679,8 +679,8 @@ button:hover {
 
 .btn-primary:hover,
 input[type="submit"]:hover {
-    background-color: #2f91ce;
-    border-color: #2f91ce;
+    background-color: #2f91ce !important;
+    border-color: #2f91ce !important;
 }
 
 input[type="reset"]:active,
