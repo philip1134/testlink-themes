@@ -1646,7 +1646,7 @@ div.form-border {
     color: #555 !important;
     line-height: 24px !important;
     border-color: #e3e3e3 !important;
-    background-color: #fff !important;
+    background-color: #f0f0f0 !important;
     background-image: none !important;
 }
 .x-panel-header .x-tool {
@@ -1655,6 +1655,10 @@ div.form-border {
 
 .x-panel-body {
     padding: 10px !important;
+    border-color: #e3e3e3 !important;
+}
+
+.x-fieldset {
     border-color: #e3e3e3 !important;
 }
 
