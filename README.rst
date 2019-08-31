@@ -3,7 +3,9 @@ TestLink Themes
 ===============
 
 testlink supports customized themes, we built this project to provide themes
-to make testlink display in different style.
+to make testlink display in different style. UI DESIGNERS AND DEVELOPERS ARE
+VERY WELCOME TO JOIN THIS PROJECT.
+
 
 ``master`` branch supports the latest testlink release, currently is
 `TestLink 1.9.20 Raijin <https://github.com/TestLinkOpenSourceTRMS/testlink-code>`__.
@@ -39,8 +41,10 @@ we say ``grayskin``:
     /** GUI themes (base for CSS and images)- modify if you create own one */
     $tlCfg->theme_dir = 'gui/themes/grayskin/';
 
---modify frame.css--
+modify frame.css
 ~~~~~~~~~~~~~~~~
+
+for Raijin code before Aug, 2019
 
 as `pr209 <https://github.com/TestLinkOpenSourceTRMS/testlink-code/pull/209>`__,
 the ``<link>`` to frame.css is hard coded in testlink code, and it links to
