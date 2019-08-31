@@ -324,10 +324,12 @@ div.menu_title a img {
 }
 
 a[href="index.php"] {
+    position: relative;
     height: 50px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+    z-index: 100;
 }
 
 div.menu_bar {
